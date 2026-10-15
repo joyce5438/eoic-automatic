@@ -2,16 +2,17 @@
 <html lang="zh-Hant" data-theme="eoic-card" data-mode="auto" data-style="off">
 <head>
 <meta charset="utf-8">
-
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-XGBEGOHcKRFZm0jRHit3hGJXrnMuTTD4BzEHUgQXL/s=' 'sha256-vjQfZ+oX05M1l9ERqRkMpxLi1EZh23JhiYF5QAjG6aA='; style-src 'unsafe-inline'; img-src data:; font-src data:; media-src data:; connect-src 'self'; form-action 'none'; base-uri 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="generator" content="Answer me with HTML 0.5.3">
 <title>Cloudflare｜六季營運與創新週期</title>
 <style>
 html[data-theme="eoic-card"], html[data-theme="eoic-card"][data-mode="light"] {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
   --radius: 14px;
   --shadow: 0 1px 2px rgba(15,23,42,0.05), 0 8px 24px -12px rgba(15,23,42,0.14);
   --bw: 1px;
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+  --head-font: var(--font-sans);
   --bg: #f4f5f8;
   --paper: #ffffff;
   --ink: #0f172a;
@@ -75,11 +76,12 @@ html[data-theme="eoic-card"][data-mode="auto"] {
 }
 
 html[data-theme="eoic-paper"], html[data-theme="eoic-paper"][data-mode="light"] {
+  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
   --radius: 2px;
   --shadow: none;
   --bw: 1px;
-  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
-  --head-font: var(--font-serif);
+  --head-font: var(--font-sans);
   --bg: #efe9dd;
   --paper: #fbf8f1;
   --ink: #221d16;
@@ -143,10 +145,12 @@ html[data-theme="eoic-paper"][data-mode="auto"] {
 }
 
 html[data-theme="eoic-swiss"], html[data-theme="eoic-swiss"][data-mode="light"] {
+  --font-sans: "Helvetica Neue", Helvetica, Arial, -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
   --radius: 0px;
   --shadow: none;
   --bw: 1px;
-  --font-sans: "Helvetica Neue", Helvetica, Arial, -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+  --head-font: var(--font-sans);
   --bg: #ffffff;
   --paper: #ffffff;
   --ink: #0a0a0a;
@@ -222,39 +226,39 @@ html:lang(he)[data-theme][data-mode] {
 }
 
 html:lang(zh-Hant)[data-theme="eoic-card"][data-mode], html:lang(zh-TW)[data-theme="eoic-card"][data-mode], html:lang(zh-HK)[data-theme="eoic-card"][data-mode], html:lang(zh-MO)[data-theme="eoic-card"][data-mode] {
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 html:lang(ja)[data-theme="eoic-card"][data-mode] {
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 html:lang(he)[data-theme="eoic-card"][data-mode] {
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 html:lang(zh-Hant)[data-theme="eoic-paper"][data-mode], html:lang(zh-TW)[data-theme="eoic-paper"][data-mode], html:lang(zh-HK)[data-theme="eoic-paper"][data-mode], html:lang(zh-MO)[data-theme="eoic-paper"][data-mode] {
-  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 html:lang(ja)[data-theme="eoic-paper"][data-mode] {
-  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 html:lang(he)[data-theme="eoic-paper"][data-mode] {
-  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 html:lang(zh-Hant)[data-theme="eoic-swiss"][data-mode], html:lang(zh-TW)[data-theme="eoic-swiss"][data-mode], html:lang(zh-HK)[data-theme="eoic-swiss"][data-mode], html:lang(zh-MO)[data-theme="eoic-swiss"][data-mode] {
-  --font-sans: "Helvetica Neue", Helvetica, Arial, -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+  --font-sans: "Helvetica Neue", Helvetica, Arial, -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 html:lang(ja)[data-theme="eoic-swiss"][data-mode] {
-  --font-sans: "Helvetica Neue", Helvetica, Arial, -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+  --font-sans: "Helvetica Neue", Helvetica, Arial, -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 html:lang(he)[data-theme="eoic-swiss"][data-mode] {
-  --font-sans: "Helvetica Neue", Helvetica, Arial, -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+  --font-sans: "Helvetica Neue", Helvetica, Arial, -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 /* Answer me with HTML base — uses theme variables only, never hard-coded colors (theme tokens and decorations: themes/<name>.js). Exception: the var() fallbacks of diagrams (flow / sequence) equal the blueprint light tokens, guarded by a test. */
@@ -806,80 +810,17 @@ table.am-mark { background: none; }
 @media print { .am-remark-pop { display: none !important; } }
 
 
-html[data-theme="eoic-card"] .am-head h1 { font-weight: 700; letter-spacing: -0.01em; }
-html[data-theme="eoic-card"] .am-head .am-sub { color: var(--accent); font-weight: 600; }
-html[data-theme="eoic-card"] .am-panel { border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
-html[data-theme="eoic-card"] .am-panel-head { background: var(--paper); border-bottom: 1px solid var(--line); }
-html[data-theme="eoic-card"] .am-panel-id { border-radius: 8px; background: var(--accent); color: #fff; min-width: 26px; height: 26px; margin: 11px 0 11px 16px; font-size: 12px; font-weight: 700; }
-html[data-theme="eoic-card"] .am-panel-head h2 { font-weight: 650; letter-spacing: -0.005em; }
-html[data-theme="eoic-card"] .am-panel-body { padding-top: 16px; }
-html[data-theme="eoic-card"] .am-callout { border-radius: 12px; border-left-width: 4px; }
-html[data-theme="eoic-card"] .am-callout-title { font-weight: 700; }
-html[data-theme="eoic-card"] .am-kv { border-radius: 12px; overflow: hidden; background: var(--fill); }
-html[data-theme="eoic-card"] .am-kv-cell dt { font-size: 11.5px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-3); }
-html[data-theme="eoic-card"] .am-kv-cell dd { font-variant-numeric: tabular-nums; font-weight: 650; }
-html[data-theme="eoic-card"] .am-md table { font-variant-numeric: tabular-nums; border-radius: 10px; }
-html[data-theme="eoic-card"] .am-md thead th { background: var(--fill); color: var(--ink-2); font-size: 12px; letter-spacing: 0.03em; }
-html[data-theme="eoic-card"] .am-md tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--fill) 55%, transparent); }
-html[data-theme="eoic-card"] .am-md tbody tr:last-child td { border-bottom: 0; }
-html[data-theme="eoic-card"] .am-md p, html[data-theme="eoic-card"] .am-md li { line-height: 1.7; }
-html[data-theme="eoic-card"] .am-md strong { color: var(--ink); }
-html[data-theme="eoic-card"] .am-toc a { border-radius: 8px; }
-html[data-theme="eoic-card"] .am-md table { margin-bottom: 16px; }
-html[data-theme="eoic-card"] .am-md p + p { margin-top: 10px; }
+html[data-theme="eoic-card"] .am-head h1 { font-weight: 700; letter-spacing: -0.01em; } html[data-theme="eoic-card"] .am-head .am-sub { color: var(--accent); font-weight: 600; } html[data-theme="eoic-card"] .am-panel { border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; } html[data-theme="eoic-card"] .am-panel-head { background: var(--paper); border-bottom: 1px solid var(--line); } html[data-theme="eoic-card"] .am-panel-id { border-radius: 8px; background: var(--accent); color: #fff; min-width: 26px; height: 26px; margin: 11px 0 11px 16px; font-size: 12px; font-weight: 700; } html[data-theme="eoic-card"] .am-panel-head h2 { font-weight: 650; letter-spacing: -0.005em; } html[data-theme="eoic-card"] .am-panel-body { padding-top: 16px; } html[data-theme="eoic-card"] .am-callout { border-radius: 12px; border-left-width: 4px; } html[data-theme="eoic-card"] .am-callout-title { font-weight: 700; } html[data-theme="eoic-card"] .am-kv { border-radius: 12px; overflow: hidden; background: var(--fill); } html[data-theme="eoic-card"] .am-kv-cell dt { font-size: 11.5px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-3); } html[data-theme="eoic-card"] .am-kv-cell dd { font-variant-numeric: tabular-nums; font-weight: 650; } html[data-theme="eoic-card"] .am-md table { font-variant-numeric: tabular-nums; border-radius: 10px; margin-bottom: 16px; } html[data-theme="eoic-card"] .am-md thead th { background: var(--fill); color: var(--ink-2); font-size: 12px; letter-spacing: 0.03em; } html[data-theme="eoic-card"] .am-md tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--fill) 55%, transparent); } html[data-theme="eoic-card"] .am-md tbody tr:last-child td { border-bottom: 0; } html[data-theme="eoic-card"] .am-md p, html[data-theme="eoic-card"] .am-md li { line-height: 1.7; } html[data-theme="eoic-card"] .am-md p + p { margin-top: 10px; } html[data-theme="eoic-card"] .am-toc a { border-radius: 8px; }
 
-html[data-theme="eoic-paper"] { --font-serif: "Iowan Old Style", Palatino, Georgia, "Songti TC", "Noto Serif TC", "Noto Serif CJK TC", "PMingLiU", serif; }
-html[data-theme="eoic-paper"] .am-head h1, html[data-theme="eoic-paper"] .am-panel-head h2, html[data-theme="eoic-paper"] .am-md, html[data-theme="eoic-paper"] .am-intro, html[data-theme="eoic-paper"] .am-callout { font-family: var(--font-serif); }
-html[data-theme="eoic-paper"] .am-head h1 { font-weight: 700; letter-spacing: 0.01em; border-bottom: 3px double var(--ink); padding-bottom: 14px; }
-html[data-theme="eoic-paper"] .am-head .am-sub { font-family: var(--font-serif); font-style: italic; color: var(--accent); }
-html[data-theme="eoic-paper"] .am-panel { background: var(--paper); border: 1px solid var(--line); border-top: 2px solid var(--ink); }
-html[data-theme="eoic-paper"] .am-panel-head { background: transparent; border-bottom: 1px solid var(--line); }
-html[data-theme="eoic-paper"] .am-panel-id { background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 50%; font-family: var(--font-serif); font-style: italic; }
-html[data-theme="eoic-paper"] .am-panel-head h2 { font-weight: 650; }
-html[data-theme="eoic-paper"] .am-md p, html[data-theme="eoic-paper"] .am-md li { font-size: 15.5px; line-height: 1.85; }
-html[data-theme="eoic-paper"] .am-callout { border-radius: 0; border-left-width: 3px; background: var(--accent-bg); }
-html[data-theme="eoic-paper"] .am-callout-title { font-weight: 700; }
-html[data-theme="eoic-paper"] .am-kv { border-radius: 0; border-color: var(--ink); border-width: 1px 0; }
-html[data-theme="eoic-paper"] .am-kv-cell dt { font-family: var(--font-sans); font-size: 11.5px; letter-spacing: 0.08em; color: var(--ink-3); }
-html[data-theme="eoic-paper"] .am-kv-cell dd { font-family: var(--font-serif); font-variant-numeric: tabular-nums; font-weight: 700; }
-html[data-theme="eoic-paper"] .am-md table { font-family: var(--font-sans); font-variant-numeric: tabular-nums; border-radius: 0; border-top: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); }
-html[data-theme="eoic-paper"] .am-md thead th { background: transparent; border-bottom: 1px solid var(--ink); color: var(--ink); font-size: 12px; }
-html[data-theme="eoic-paper"] .am-md td, html[data-theme="eoic-paper"] .am-md th { border-left: 0; border-right: 0; }
-html[data-theme="eoic-paper"] .am-md table { margin-bottom: 18px; }
-html[data-theme="eoic-paper"] .am-callout--ok { background: var(--ok-bg); }
-html[data-theme="eoic-paper"] .am-callout--err { background: var(--err-bg); }
-html[data-theme="eoic-paper"] .am-callout--warn { background: var(--warn-bg); }
+html[data-theme="eoic-paper"] { --font-serif: "Iowan Old Style", Palatino, Georgia, "Songti TC", "Noto Serif TC", "Noto Serif CJK TC", "PMingLiU", serif; } html[data-theme="eoic-paper"] .am-head h1, html[data-theme="eoic-paper"] .am-panel-head h2, html[data-theme="eoic-paper"] .am-md, html[data-theme="eoic-paper"] .am-intro, html[data-theme="eoic-paper"] .am-callout { font-family: var(--font-serif); } html[data-theme="eoic-paper"] .am-head h1 { font-weight: 700; letter-spacing: 0.01em; border-bottom: 3px double var(--ink); padding-bottom: 14px; } html[data-theme="eoic-paper"] .am-head .am-sub { font-family: var(--font-serif); font-style: italic; color: var(--accent); } html[data-theme="eoic-paper"] .am-panel { background: var(--paper); border: 1px solid var(--line); border-top: 2px solid var(--ink); } html[data-theme="eoic-paper"] .am-panel-head { background: transparent; border-bottom: 1px solid var(--line); } html[data-theme="eoic-paper"] .am-panel-id { background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 50%; font-family: var(--font-serif); font-style: italic; } html[data-theme="eoic-paper"] .am-md p, html[data-theme="eoic-paper"] .am-md li { font-size: 15.5px; line-height: 1.85; } html[data-theme="eoic-paper"] .am-callout { border-radius: 0; border-left-width: 3px; background: var(--accent-bg); } html[data-theme="eoic-paper"] .am-kv { border-radius: 0; border-color: var(--ink); border-width: 1px 0; } html[data-theme="eoic-paper"] .am-kv-cell dd { font-family: var(--font-serif); font-variant-numeric: tabular-nums; font-weight: 700; } html[data-theme="eoic-paper"] .am-md table { font-family: var(--font-sans); font-variant-numeric: tabular-nums; border-radius: 0; border-top: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); } html[data-theme="eoic-paper"] .am-md thead th { background: transparent; border-bottom: 1px solid var(--ink); color: var(--ink); } html[data-theme="eoic-paper"] .am-md td, html[data-theme="eoic-paper"] .am-md th { border-left: 0; border-right: 0; }
 
-html[data-theme="eoic-swiss"] .am-head h1 { font-size: 40px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; }
-html[data-theme="eoic-swiss"] .am-head .am-sub { color: var(--accent); font-weight: 700; font-size: 16px; }
-html[data-theme="eoic-swiss"] .am-panel { background: transparent; border: 0; border-top: 4px solid var(--ink); border-radius: 0; box-shadow: none; padding-top: 4px; }
-html[data-theme="eoic-swiss"] .am-panel-head { background: transparent; border-bottom: 0; align-items: baseline; }
-html[data-theme="eoic-swiss"] .am-panel-id { background: transparent; color: var(--accent); border: 0; border-radius: 0; font-size: 34px; font-weight: 800; letter-spacing: -0.04em; min-width: 0; height: auto; line-height: 1; margin: 8px 14px 4px 0; }
-html[data-theme="eoic-swiss"] .am-panel-head h2 { font-size: 20px; font-weight: 800; letter-spacing: -0.01em; color: var(--ink); }
-html[data-theme="eoic-swiss"] .am-panel-body { padding-top: 10px; }
-html[data-theme="eoic-swiss"] .am-callout { border-radius: 0; border: 0; border-left: 6px solid var(--accent); background: var(--fill); }
-html[data-theme="eoic-swiss"] .am-callout--ok { border-left-color: var(--ok); background: var(--ok-bg); }
-html[data-theme="eoic-swiss"] .am-callout--warn { border-left-color: var(--warn); background: var(--warn-bg); }
-html[data-theme="eoic-swiss"] .am-callout--err { border-left-color: var(--err); background: var(--err-bg); }
-html[data-theme="eoic-swiss"] .am-callout-title { font-weight: 800; font-size: 16px; }
-html[data-theme="eoic-swiss"] .am-kv { border-radius: 0; border-color: var(--ink); border-width: 2px 0 1px; background: transparent; }
-html[data-theme="eoic-swiss"] .am-kv-cell dt { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); }
-html[data-theme="eoic-swiss"] .am-kv-cell dd { font-size: 19px; font-weight: 800; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
-html[data-theme="eoic-swiss"] .am-md table { border-radius: 0; border: 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--ink); font-variant-numeric: tabular-nums; margin-bottom: 16px; }
-html[data-theme="eoic-swiss"] .am-md thead th { background: transparent; color: var(--ink); font-size: 11.5px; font-weight: 800; letter-spacing: 0.06em; border-bottom: 1px solid var(--ink); }
-html[data-theme="eoic-swiss"] .am-md td, html[data-theme="eoic-swiss"] .am-md th { border-left: 0; border-right: 0; }
-html[data-theme="eoic-swiss"] .am-md tbody tr:hover td { background: var(--fill); }
-html[data-theme="eoic-swiss"] .am-md p, html[data-theme="eoic-swiss"] .am-md li { line-height: 1.75; }
-html[data-theme="eoic-swiss"] .am-md p + p { margin-top: 10px; }
-html[data-theme="eoic-swiss"] .am-md strong { font-weight: 800; }
-html[data-theme="eoic-swiss"] .am-toc a { border-radius: 0; font-weight: 600; }
+html[data-theme="eoic-swiss"] .am-head h1 { font-size: 40px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; } html[data-theme="eoic-swiss"] .am-head .am-sub { color: var(--accent); font-weight: 700; font-size: 16px; } html[data-theme="eoic-swiss"] .am-panel { background: transparent; border: 0; border-top: 4px solid var(--ink); border-radius: 0; box-shadow: none; padding-top: 4px; } html[data-theme="eoic-swiss"] .am-panel-head { background: transparent; border-bottom: 0; align-items: baseline; } html[data-theme="eoic-swiss"] .am-panel-id { background: transparent; color: var(--accent); border: 0; border-radius: 0; font-size: 34px; font-weight: 800; letter-spacing: -0.04em; min-width: 0; height: auto; line-height: 1; margin: 8px 14px 4px 0; } html[data-theme="eoic-swiss"] .am-panel-head h2 { font-size: 20px; font-weight: 800; letter-spacing: -0.01em; color: var(--ink); } html[data-theme="eoic-swiss"] .am-panel-body { padding-top: 10px; } html[data-theme="eoic-swiss"] .am-callout { border-radius: 0; border: 0; border-left: 6px solid var(--accent); background: var(--fill); } html[data-theme="eoic-swiss"] .am-callout--ok { border-left-color: var(--ok); background: var(--ok-bg); } html[data-theme="eoic-swiss"] .am-callout--warn { border-left-color: var(--warn); background: var(--warn-bg); } html[data-theme="eoic-swiss"] .am-callout--err { border-left-color: var(--err); background: var(--err-bg); } html[data-theme="eoic-swiss"] .am-callout-title { font-weight: 800; font-size: 16px; } html[data-theme="eoic-swiss"] .am-kv { border-radius: 0; border-color: var(--ink); border-width: 2px 0 1px; background: transparent; } html[data-theme="eoic-swiss"] .am-kv-cell dt { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); } html[data-theme="eoic-swiss"] .am-kv-cell dd { font-size: 19px; font-weight: 800; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; } html[data-theme="eoic-swiss"] .am-md table { border-radius: 0; border: 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--ink); font-variant-numeric: tabular-nums; } html[data-theme="eoic-swiss"] .am-md thead th { background: transparent; color: var(--ink); font-size: 11.5px; font-weight: 800; letter-spacing: 0.06em; border-bottom: 1px solid var(--ink); } html[data-theme="eoic-swiss"] .am-md td, html[data-theme="eoic-swiss"] .am-md th { border-left: 0; border-right: 0; } html[data-theme="eoic-swiss"] .am-md tbody tr:hover td { background: var(--fill); } html[data-theme="eoic-swiss"] .am-md p, html[data-theme="eoic-swiss"] .am-md li { line-height: 1.75; } html[data-theme="eoic-swiss"] .am-md strong { font-weight: 800; }
 </style>
 </head>
 <body>
 <div class="am-toolbar" data-am-root-lang="zh-Hant" data-am-root-theme="eoic-card" data-am-root-mode="auto" data-am-root-style="off">
-<a class="am-btn" href="../../index.html" style="display: inline-flex; align-items: center; gap: 4px; text-decoration: none; color: var(--ink);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>回首頁</a>
-<label class="am-pick">主題<select data-am="theme"><option value="eoic-card" selected>卡片</option><option value="eoic-paper">紙張</option><option value="eoic-swiss">瑞士</option></select></label>
-<label class="am-pick">明暗<select data-am="mode"><option value="auto" selected>跟隨系統</option><option value="light">淺色</option><option value="dark">深色</option></select></label>
+<a class="am-btn" href="https://joyce5438.github.io/eoic-automatic/index.html" aria-label="回首頁" title="回首頁" style="display: inline-flex; align-items: center; text-decoration: none; color: var(--ink);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 9-8 9 8"></path><path d="M5 10v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10"></path><path d="M9 21v-6h6v6"></path></svg></a><label class="am-pick" aria-label="theme"><select data-am="theme" aria-label="theme"><option value="eoic-card" selected>卡片</option><option value="eoic-paper">閱讀</option><option value="eoic-swiss">編排</option></select></label>
+<label class="am-pick" aria-label="mode"><select data-am="mode" aria-label="mode"><option value="auto" selected>auto</option><option value="light">light</option><option value="dark">dark</option></select></label>
 <button class="am-btn am-btn--reply" type="button" data-am="reply" data-ui="{&quot;button&quot;:&quot;回覆&quot;,&quot;comment&quot;:&quot;評論&quot;,&quot;commentHint&quot;:&quot;對這個面板的意見&quot;,&quot;title&quot;:&quot;你的回覆&quot;,&quot;hint&quot;:&quot;複製後貼回和 Agent 的對話，它會按你的選擇和意見繼續。&quot;,&quot;copy&quot;:&quot;複製回覆&quot;,&quot;copyFailed&quot;:&quot;複製失敗 — 請按 Cmd/Ctrl+C&quot;,&quot;close&quot;:&quot;關閉&quot;,&quot;suggested&quot;:&quot;建議&quot;,&quot;empty&quot;:&quot;先選擇選項，或在面板上寫評論。&quot;,&quot;decisions&quot;:&quot;決定&quot;,&quot;comments&quot;:&quot;評論&quot;,&quot;confirmed&quot;:&quot;確認了建議&quot;,&quot;untouched&quot;:&quot;未作答，保留建議&quot;,&quot;was&quot;:&quot;原為&quot;,&quot;typed&quot;:&quot;以 \&quot;&gt;\&quot; 開頭的行是讀者輸入的文字。&quot;,&quot;raw&quot;:&quot;查看將複製的文字&quot;,&quot;preview&quot;:&quot;預覽&quot;,&quot;count&quot;:{&quot;answered&quot;:&quot;已作答 {n} 項&quot;,&quot;comments&quot;:&quot;評論 {n} 則&quot;,&quot;remarks&quot;:&quot;標註 {n} 處&quot;},&quot;done&quot;:&quot;已複製 ✓&quot;,&quot;remarks&quot;:&quot;標註&quot;,&quot;kinds&quot;:{&quot;suggestion&quot;:&quot;建議&quot;,&quot;keep&quot;:&quot;保留&quot;,&quot;question&quot;:&quot;疑問&quot;,&quot;concern&quot;:&quot;關注&quot;}}">回覆</button>
 <button class="am-btn am-btn--remark" type="button" data-am="remark" data-ui="{&quot;button&quot;:&quot;標註&quot;,&quot;hint&quot;:&quot;批註（可選）&quot;,&quot;save&quot;:&quot;儲存&quot;,&quot;remove&quot;:&quot;刪除&quot;,&quot;section&quot;:&quot;標註&quot;,&quot;kinds&quot;:{&quot;suggestion&quot;:&quot;建議&quot;,&quot;keep&quot;:&quot;保留&quot;,&quot;question&quot;:&quot;疑問&quot;,&quot;concern&quot;:&quot;關注&quot;}}">標註</button>
 <button class="am-btn" type="button" data-am="copy" data-done="已複製 ✓">複製源稿</button>
