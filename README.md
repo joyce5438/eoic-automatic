@@ -2,7 +2,7 @@
 
 企業營運與創新週期分析報告庫 · 33 份報告
 
-Full archive of the content from https://eoic-automatic.applecat69.chatgpt.site/
+Full archive of the content from https://joyce5438.github.io/eoic-automatic/
 
 ## Structure
 
