@@ -1,216 +1,211 @@
 <!doctype html>
-<html lang="zh-Hant" data-theme="paper" data-mode="auto" data-style="off">
+<html lang="zh-Hant" data-theme="eoic-card" data-mode="auto" data-style="off">
 <head>
 <meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="generator" content="Answer me with HTML 0.5.2">
+<meta name="generator" content="Answer me with HTML 0.5.3">
 <title>Generac｜六季營運與創新週期</title>
 <style>
-html[data-theme="blueprint"], html[data-theme="blueprint"][data-mode="light"] {
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
-  --radius: 0px;
-  --shadow: none;
-  --bw: 1.5px;
-  --head-font: var(--font-sans);
-  --bg: #f6f6f3;
-  --paper: #ffffff;
-  --ink: #16181d;
-  --ink-2: #4b5260;
-  --ink-3: #8b929e;
-  --line: #1d2026;
-  --line-2: #d6dae1;
-  --fill: #f3f5f8;
-  --accent: #1d5fbf;
-  --accent-bg: #e4ecf8;
-  --ok: #1d5fbf;
-  --ok-bg: #e4ecf8;
-  --err: #c62828;
-  --err-bg: #fbeaea;
-  --warn: #a8620a;
-  --warn-bg: #fdf3e2;
-  --head-bg: #16181d;
-  --head-fg: #ffffff;
-}
-html[data-theme="blueprint"][data-mode="dark"] {
-  --bg: #081322;
-  --paper: #0d1c31;
-  --ink: #e6edf7;
-  --ink-2: #a9b8cc;
-  --ink-3: #6b7f99;
-  --line: #c9d6e8;
-  --line-2: #23385a;
-  --fill: #12253f;
-  --accent: #6ea8ff;
-  --accent-bg: #16305a;
-  --ok: #6ea8ff;
-  --ok-bg: #16305a;
-  --err: #ff7070;
-  --err-bg: #3b1620;
-  --warn: #f0b14a;
-  --warn-bg: #3a2a10;
-  --head-bg: #e6edf7;
-  --head-fg: #081322;
-}
-@media (prefers-color-scheme: dark) {
-html[data-theme="blueprint"][data-mode="auto"] {
-  --bg: #081322;
-  --paper: #0d1c31;
-  --ink: #e6edf7;
-  --ink-2: #a9b8cc;
-  --ink-3: #6b7f99;
-  --line: #c9d6e8;
-  --line-2: #23385a;
-  --fill: #12253f;
-  --accent: #6ea8ff;
-  --accent-bg: #16305a;
-  --ok: #6ea8ff;
-  --ok-bg: #16305a;
-  --err: #ff7070;
-  --err-bg: #3b1620;
-  --warn: #f0b14a;
-  --warn-bg: #3a2a10;
-  --head-bg: #e6edf7;
-  --head-fg: #081322;
-}
-}
-
-html[data-theme="shadcn"], html[data-theme="shadcn"][data-mode="light"] {
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
-  --radius: 8px;
-  --shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+html[data-theme="eoic-card"], html[data-theme="eoic-card"][data-mode="light"] {
+  --radius: 14px;
+  --shadow: 0 1px 2px rgba(15,23,42,0.05), 0 8px 24px -12px rgba(15,23,42,0.14);
   --bw: 1px;
-  --head-font: var(--font-sans);
-  --bg: #fafafa;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+  --bg: #f4f5f8;
   --paper: #ffffff;
-  --ink: #09090b;
-  --ink-2: #71717a;
-  --ink-3: #a1a1aa;
-  --line: #e4e4e7;
-  --line-2: #f0f0f2;
-  --fill: #f4f4f5;
-  --accent: #2563eb;
-  --accent-bg: #eff6ff;
-  --ok: #16a34a;
-  --ok-bg: #f0fdf4;
-  --err: #dc2626;
-  --err-bg: #fef2f2;
-  --warn: #d97706;
-  --warn-bg: #fffbeb;
-  --head-bg: #18181b;
-  --head-fg: #fafafa;
+  --ink: #0f172a;
+  --ink-2: #475569;
+  --ink-3: #64748b;
+  --line: #e2e8f0;
+  --line-2: #eef1f6;
+  --fill: #f1f5f9;
+  --accent: #3b4fe0;
+  --accent-bg: #eef0ff;
+  --ok: #0f7a4d;
+  --ok-bg: #e8f6ee;
+  --err: #c0262d;
+  --err-bg: #fdecec;
+  --warn: #a85d00;
+  --warn-bg: #fff4e0;
+  --head-bg: #0f172a;
+  --head-fg: #f8fafc;
 }
-html[data-theme="shadcn"][data-mode="dark"] {
-  --bg: #09090b;
-  --paper: #121215;
-  --ink: #fafafa;
-  --ink-2: #a1a1aa;
-  --ink-3: #71717a;
-  --line: #27272a;
-  --line-2: #1c1c1f;
-  --fill: #18181b;
-  --accent: #60a5fa;
-  --accent-bg: #172554;
-  --ok: #4ade80;
-  --ok-bg: #052e16;
-  --err: #f87171;
-  --err-bg: #450a0a;
-  --warn: #fbbf24;
-  --warn-bg: #451a03;
-  --head-bg: #fafafa;
-  --head-fg: #18181b;
+html[data-theme="eoic-card"][data-mode="dark"] {
+  --bg: #0b0d14;
+  --paper: #141824;
+  --ink: #eef1f8;
+  --ink-2: #a3adc2;
+  --ink-3: #8590a8;
+  --line: #262c3d;
+  --line-2: #1b2030;
+  --fill: #1a1f2e;
+  --accent: #8b9bff;
+  --accent-bg: #1c2250;
+  --ok: #4ade9a;
+  --ok-bg: #0d2a1e;
+  --err: #ff8a8f;
+  --err-bg: #3a1214;
+  --warn: #ffb454;
+  --warn-bg: #35230a;
+  --head-bg: #eef1f8;
+  --head-fg: #0b0d14;
 }
 @media (prefers-color-scheme: dark) {
-html[data-theme="shadcn"][data-mode="auto"] {
-  --bg: #09090b;
-  --paper: #121215;
-  --ink: #fafafa;
-  --ink-2: #a1a1aa;
-  --ink-3: #71717a;
-  --line: #27272a;
-  --line-2: #1c1c1f;
-  --fill: #18181b;
-  --accent: #60a5fa;
-  --accent-bg: #172554;
-  --ok: #4ade80;
-  --ok-bg: #052e16;
-  --err: #f87171;
-  --err-bg: #450a0a;
-  --warn: #fbbf24;
-  --warn-bg: #451a03;
-  --head-bg: #fafafa;
-  --head-fg: #18181b;
+html[data-theme="eoic-card"][data-mode="auto"] {
+  --bg: #0b0d14;
+  --paper: #141824;
+  --ink: #eef1f8;
+  --ink-2: #a3adc2;
+  --ink-3: #8590a8;
+  --line: #262c3d;
+  --line-2: #1b2030;
+  --fill: #1a1f2e;
+  --accent: #8b9bff;
+  --accent-bg: #1c2250;
+  --ok: #4ade9a;
+  --ok-bg: #0d2a1e;
+  --err: #ff8a8f;
+  --err-bg: #3a1214;
+  --warn: #ffb454;
+  --warn-bg: #35230a;
+  --head-bg: #eef1f8;
+  --head-fg: #0b0d14;
 }
 }
 
-html[data-theme="paper"], html[data-theme="paper"][data-mode="light"] {
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
-  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", serif;
+html[data-theme="eoic-paper"], html[data-theme="eoic-paper"][data-mode="light"] {
   --radius: 2px;
   --shadow: none;
   --bw: 1px;
+  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
   --head-font: var(--font-serif);
-  --bg: #f5f2ea;
-  --paper: #fdfbf6;
-  --ink: #1f1c17;
-  --ink-2: #57514a;
-  --ink-3: #8c867b;
-  --line: #cbc3b4;
-  --line-2: #e5dfd3;
-  --fill: #f3eee4;
-  --accent: #8c2f1e;
-  --accent-bg: #f5e5df;
-  --ok: #2e6a3b;
-  --ok-bg: #e4efe5;
-  --err: #a3251b;
-  --err-bg: #f7e3e0;
-  --warn: #7f5300;
-  --warn-bg: #f6ecd6;
-  --head-bg: #1f1c17;
-  --head-fg: #fdfbf6;
+  --bg: #efe9dd;
+  --paper: #fbf8f1;
+  --ink: #221d16;
+  --ink-2: #51483b;
+  --ink-3: #6f6454;
+  --line: #d9cfbc;
+  --line-2: #e8e0d0;
+  --fill: #f2ecdf;
+  --accent: #9a3d1c;
+  --accent-bg: #f6e6dc;
+  --ok: #2f6b3a;
+  --ok-bg: #e6efe0;
+  --err: #a32a22;
+  --err-bg: #f6e2de;
+  --warn: #8a5a00;
+  --warn-bg: #f7ecd2;
+  --head-bg: #221d16;
+  --head-fg: #fbf8f1;
 }
-html[data-theme="paper"][data-mode="dark"] {
-  --bg: #15130f;
-  --paper: #1c1a15;
-  --ink: #ebe5d8;
-  --ink-2: #b5ad9e;
-  --ink-3: #7b7467;
-  --line: #4a443a;
-  --line-2: #2d2a24;
-  --fill: #242119;
-  --accent: #e59a7d;
-  --accent-bg: #3a2219;
-  --ok: #8cc79a;
-  --ok-bg: #1c3122;
-  --err: #f0928a;
-  --err-bg: #3a1d1a;
-  --warn: #e3b866;
-  --warn-bg: #352a13;
-  --head-bg: #ebe5d8;
-  --head-fg: #15130f;
+html[data-theme="eoic-paper"][data-mode="dark"] {
+  --bg: #16130e;
+  --paper: #1e1a14;
+  --ink: #eee6d6;
+  --ink-2: #bdb29d;
+  --ink-3: #9a8f7a;
+  --line: #383124;
+  --line-2: #2a251b;
+  --fill: #252017;
+  --accent: #e49a73;
+  --accent-bg: #3a2417;
+  --ok: #8fd09a;
+  --ok-bg: #1b2e1e;
+  --err: #f0948c;
+  --err-bg: #3b1b17;
+  --warn: #e7bd6a;
+  --warn-bg: #35280d;
+  --head-bg: #eee6d6;
+  --head-fg: #16130e;
 }
 @media (prefers-color-scheme: dark) {
-html[data-theme="paper"][data-mode="auto"] {
-  --bg: #15130f;
-  --paper: #1c1a15;
-  --ink: #ebe5d8;
-  --ink-2: #b5ad9e;
-  --ink-3: #7b7467;
-  --line: #4a443a;
-  --line-2: #2d2a24;
-  --fill: #242119;
-  --accent: #e59a7d;
-  --accent-bg: #3a2219;
-  --ok: #8cc79a;
-  --ok-bg: #1c3122;
-  --err: #f0928a;
-  --err-bg: #3a1d1a;
-  --warn: #e3b866;
-  --warn-bg: #352a13;
-  --head-bg: #ebe5d8;
-  --head-fg: #15130f;
+html[data-theme="eoic-paper"][data-mode="auto"] {
+  --bg: #16130e;
+  --paper: #1e1a14;
+  --ink: #eee6d6;
+  --ink-2: #bdb29d;
+  --ink-3: #9a8f7a;
+  --line: #383124;
+  --line-2: #2a251b;
+  --fill: #252017;
+  --accent: #e49a73;
+  --accent-bg: #3a2417;
+  --ok: #8fd09a;
+  --ok-bg: #1b2e1e;
+  --err: #f0948c;
+  --err-bg: #3b1b17;
+  --warn: #e7bd6a;
+  --warn-bg: #35280d;
+  --head-bg: #eee6d6;
+  --head-fg: #16130e;
+}
+}
+
+html[data-theme="eoic-swiss"], html[data-theme="eoic-swiss"][data-mode="light"] {
+  --radius: 0px;
+  --shadow: none;
+  --bw: 1px;
+  --font-sans: "Helvetica Neue", Helvetica, Arial, -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+  --bg: #ffffff;
+  --paper: #ffffff;
+  --ink: #0a0a0a;
+  --ink-2: #3d3d3a;
+  --ink-3: #5f5f5a;
+  --line: #d4d4cf;
+  --line-2: #ebebe7;
+  --fill: #f5f5f2;
+  --accent: #0f766e;
+  --accent-bg: #e3f3f1;
+  --ok: #126b33;
+  --ok-bg: #e6f4ea;
+  --err: #b42318;
+  --err-bg: #fdeceb;
+  --warn: #9a5b00;
+  --warn-bg: #fdf1d8;
+  --head-bg: #0a0a0a;
+  --head-fg: #ffffff;
+}
+html[data-theme="eoic-swiss"][data-mode="dark"] {
+  --bg: #0a0a0a;
+  --paper: #0a0a0a;
+  --ink: #f5f5f2;
+  --ink-2: #bdbdb6;
+  --ink-3: #9a9a93;
+  --line: #33332f;
+  --line-2: #1f1f1c;
+  --fill: #151513;
+  --accent: #5eead4;
+  --accent-bg: #0c2a27;
+  --ok: #4ade80;
+  --ok-bg: #0c2616;
+  --err: #ff8f86;
+  --err-bg: #3a1411;
+  --warn: #ffc247;
+  --warn-bg: #322200;
+  --head-bg: #f5f5f2;
+  --head-fg: #0a0a0a;
+}
+@media (prefers-color-scheme: dark) {
+html[data-theme="eoic-swiss"][data-mode="auto"] {
+  --bg: #0a0a0a;
+  --paper: #0a0a0a;
+  --ink: #f5f5f2;
+  --ink-2: #bdbdb6;
+  --ink-3: #9a9a93;
+  --line: #33332f;
+  --line-2: #1f1f1c;
+  --fill: #151513;
+  --accent: #5eead4;
+  --accent-bg: #0c2a27;
+  --ok: #4ade80;
+  --ok-bg: #0c2616;
+  --err: #ff8f86;
+  --err-bg: #3a1411;
+  --warn: #ffc247;
+  --warn-bg: #322200;
+  --head-bg: #f5f5f2;
+  --head-fg: #0a0a0a;
 }
 }
 
@@ -224,6 +219,42 @@ html:lang(ja)[data-theme][data-mode] {
 
 html:lang(he)[data-theme][data-mode] {
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Hebrew", "Arial Hebrew", Arial, Roboto, "Helvetica Neue", sans-serif;
+}
+
+html:lang(zh-Hant)[data-theme="eoic-card"][data-mode], html:lang(zh-TW)[data-theme="eoic-card"][data-mode], html:lang(zh-HK)[data-theme="eoic-card"][data-mode], html:lang(zh-MO)[data-theme="eoic-card"][data-mode] {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+}
+
+html:lang(ja)[data-theme="eoic-card"][data-mode] {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+}
+
+html:lang(he)[data-theme="eoic-card"][data-mode] {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+}
+
+html:lang(zh-Hant)[data-theme="eoic-paper"][data-mode], html:lang(zh-TW)[data-theme="eoic-paper"][data-mode], html:lang(zh-HK)[data-theme="eoic-paper"][data-mode], html:lang(zh-MO)[data-theme="eoic-paper"][data-mode] {
+  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+}
+
+html:lang(ja)[data-theme="eoic-paper"][data-mode] {
+  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+}
+
+html:lang(he)[data-theme="eoic-paper"][data-mode] {
+  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+}
+
+html:lang(zh-Hant)[data-theme="eoic-swiss"][data-mode], html:lang(zh-TW)[data-theme="eoic-swiss"][data-mode], html:lang(zh-HK)[data-theme="eoic-swiss"][data-mode], html:lang(zh-MO)[data-theme="eoic-swiss"][data-mode] {
+  --font-sans: "Helvetica Neue", Helvetica, Arial, -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+}
+
+html:lang(ja)[data-theme="eoic-swiss"][data-mode] {
+  --font-sans: "Helvetica Neue", Helvetica, Arial, -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
+}
+
+html:lang(he)[data-theme="eoic-swiss"][data-mode] {
+  --font-sans: "Helvetica Neue", Helvetica, Arial, -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei";
 }
 
 /* Answer me with HTML base — uses theme variables only, never hard-coded colors (theme tokens and decorations: themes/<name>.js). Exception: the var() fallbacks of diagrams (flow / sequence) equal the blueprint light tokens, guarded by a test. */
@@ -369,6 +400,37 @@ code, pre, kbd { font-family: var(--font-mono); }
 .am-reply textarea { font-family: var(--font-mono); font-size: 12.5px; }
 .am-reply-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 10px; }
 .am-reply .am-btn:disabled { opacity: .5; cursor: default; }
+/* The sheet shows the reply drawn (src/runtime/reply-view.js), each line in its own direction; the Markdown that Copy copies sits under a fold. */
+.am-reply-view {
+  max-height: min(60vh, 26em); overflow: auto; padding: 10px 12px; font: 14px/1.6 var(--font-sans); color: var(--ink);
+  background: var(--paper); border: 1px solid var(--line-2); border-radius: var(--radius); overflow-wrap: anywhere;
+}
+.am-reply-view:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.am-reply-view > div { text-align: start; unicode-bidi: isolate; }
+.am-rv-gap { height: .5em; }
+.am-rv-h1 { font-weight: 700; font-size: 15px; }
+.am-rv-h2 { font-weight: 700; color: var(--ink-2); margin-top: 2px; }
+.am-rv-tag {
+  display: inline-block; min-width: 1.6em; padding: 0 4px; font-size: 12px; line-height: 1.5; text-align: center;
+  color: var(--ink-2); border: 1px solid var(--line-2); border-radius: var(--radius);
+}
+.am-rv-a { padding-inline-start: 1.6em; }
+.am-rv-a em { color: var(--ink-2); }
+.am-rv-quote { margin-inline-start: 1em; padding-inline-start: 10px; border-inline-start: 3px solid var(--line-2); color: var(--ink-2); white-space: pre-wrap; }
+.am-reply-raw summary { margin-top: 10px; margin-bottom: 6px; font-size: 12px; color: var(--ink-2); cursor: pointer; }
+/* The bar at the bottom of the page: counts and one-click copy, so the reader need not go to the Reply button at the top. */
+.am-reply-bar {
+  position: fixed; inset-block-end: 16px; inset-inline: 0; margin-inline: auto; width: max-content; max-width: calc(100vw - 24px);
+  z-index: 10; display: flex; align-items: center; gap: 10px; padding-block: 8px; padding-inline: 14px 8px; font-size: 13px;
+  color: var(--ink); background: var(--paper); border: 1px solid var(--line-2); border-radius: var(--radius); box-shadow: 0 6px 24px rgba(0,0,0,.18);
+}
+.am-reply-bar[hidden] { display: none; }
+.am-reply-bar-count { color: var(--ink-2); }
+.am-reply-bar .am-btn { flex: none; white-space: nowrap; }
+body.am-has-reply-bar { padding-block-end: 72px; }
+@media (max-width: 480px) {
+  .am-reply-bar { inset-inline: 12px; width: auto; justify-content: space-between; }
+}
 /* Code block: a header (title or path:lines, language, copy), then one span per line; numbered blocks show the line number in a gutter */
 .am-codeblock { margin: 10px 0; min-width: 0; }
 .am-codeblock .am-code { border-top-left-radius: 0; border-top-right-radius: 0; padding: 10px 0; }
@@ -432,7 +494,7 @@ code, pre, kbd { font-family: var(--font-mono); }
   position: relative; display: block; width: 11px; height: 11px; margin: 2px auto 8px;
   border: var(--bw) solid var(--line); border-radius: 50%; background: var(--paper);
 }
-.am-tl-item--hi .am-tl-dot { background: var(--accent); border-color: var(--accent); }
+.am-tl-item--hi .am-tl-dot { background: var(--hi-stroke, var(--accent)); border-color: var(--hi-stroke, var(--accent)); }
 .am-tl-title { display: block; font-size: 12.5px; font-weight: 500; }
 .am-tl-text { display: block; font-size: 12px; color: var(--ink-2); line-height: 1.45; }
 .am-timeline--v li { position: relative; padding: 0 0 14px; padding-inline-start: 22px; }
@@ -505,11 +567,16 @@ code, pre, kbd { font-family: var(--font-mono); }
 .am-tree-root--solo { padding-bottom: 12px; }
 .am-tree-root--solo::after { display: none; }
 .am-tree-box {
-  border: var(--bw) solid var(--line); background: var(--paper); padding: 6px 14px; text-align: center;
-  border-radius: var(--radius); font-weight: 600;
+  border: var(--node-width, var(--bw)) solid var(--node-stroke, var(--line)); background: var(--node-fill, var(--paper)); padding: 6px 14px; text-align: center;
+  border-radius: var(--node-radius, var(--radius)); font-weight: 600; color: var(--node-text, inherit); filter: var(--node-shadow, none);
 }
 .am-tree-box small { display: block; font-weight: 400; color: var(--ink-2); font-size: 12px; }
-.am-tree-box--root { background: var(--accent-bg); font-size: 15px; padding: 8px 28px; }
+/* The root box and a highlighted box are emphasis: they take the highlight tokens. With none set the root box keeps its accent tint and a highlighted box looks like any other. */
+.am-tree-box--root, .am-tree-box--hi { border-color: var(--hi-stroke, var(--node-stroke, var(--line))); color: var(--hi-text, var(--node-text, inherit)); }
+.am-tree-box--root { background: var(--hi-fill, var(--accent-bg)); }
+.am-tree-box--hi { background: var(--hi-fill, var(--node-fill, var(--paper))); }
+.am-tree-box--root small, .am-tree-box--hi small { color: var(--hi-text, var(--ink-2)); }
+.am-tree-box--root { font-size: 15px; padding: 8px 28px; }
 .am-tree-cols { display: grid; grid-template-columns: repeat(var(--n, 1), minmax(0, 1fr)); }
 .am-tree-col { position: relative; padding: 18px 8px 0; min-width: 0; }
 .am-tree-col::before { content: ""; position: absolute; top: 0; left: 0; right: 0; border-top: var(--bw) solid var(--line); }
@@ -533,19 +600,32 @@ code, pre, kbd { font-family: var(--font-mono); }
 /* Embedded previews can lose html[data-theme]; the fallbacks keep diagrams readable, and defined theme variables still win. */
 .am-diagram svg { max-width: 100%; height: auto; font-family: var(--font-sans, sans-serif); }
 .am-diagram text { fill: var(--ink, #16181d); font-size: 13px; }
-.am-node-shape { fill: var(--paper, #ffffff); stroke: var(--line, #1d2026); stroke-width: var(--bw, 1.5px); }
-.am-node--hi .am-node-shape { fill: var(--accent-bg, #e4ecf8); stroke: var(--accent, #1d5fbf); }
-.am-node--hi text { fill: var(--accent, #1d5fbf); font-weight: 600; }
-.am-edge { fill: none; stroke: var(--ink-2, #4b5260); stroke-width: 1.3; }
+/* Diagram tokens (docs/reference.md, "Diagram tokens"): each painted part reads an optional token and falls back to the look it always had,
+   so a theme that sets none of them draws the same diagram. Font family, size and weight are not tokens: diagram text is measured for the sans font. */
+.am-node-shape { fill: var(--node-fill, var(--paper, #ffffff)); stroke: var(--node-stroke, var(--line, #1d2026)); stroke-width: var(--node-width, var(--bw, 1.5px)); filter: var(--node-shadow, none); }
+/* A cylinder is two shapes (body, then cap): only the body casts the shadow. */
+.am-node-shape ~ .am-node-shape { filter: none; }
+/* The corner radius is an SVG attribute (the fallback for Safari before 17.4, which ignores a CSS rx); the default here equals the attribute. A pill and a diamond keep their shape. */
+.am-node--rect .am-node-shape, .am-node--er .am-node-shape { rx: var(--node-radius, 3px); }
+.am-node--hi .am-node-shape { fill: var(--hi-fill, var(--accent-bg, #e4ecf8)); stroke: var(--hi-stroke, var(--accent, #1d5fbf)); }
+.am-diagram .am-node-text { fill: var(--node-text, var(--ink, #16181d)); }
+.am-node--hi text { fill: var(--hi-text, var(--accent, #1d5fbf)); font-weight: 600; }
+.am-diagram .am-node--hi .am-node-text { fill: var(--hi-text, var(--accent, #1d5fbf)); }
+.am-edge { fill: none; stroke: var(--edge-color, var(--ink-2, #4b5260)); stroke-width: var(--edge-width, 1.3); }
 .am-edge--dashed { stroke-dasharray: 5 4; }
-.am-arrow { fill: var(--ink-2, #4b5260); }
+.am-arrow { fill: var(--edge-color, var(--ink-2, #4b5260)); }
 .am-edge-label rect { fill: var(--paper, #ffffff); }
-.am-diagram .am-edge-label text { fill: var(--accent, #1d5fbf); font-size: 11.5px; }
-.am-cluster { fill: var(--fill, #f3f5f8); stroke: var(--line-2, #d6dae1); stroke-width: 1; stroke-dasharray: 4 3; }
+.am-diagram .am-edge-label text { fill: var(--edge-label, var(--accent, #1d5fbf)); font-size: 11.5px; }
+.am-cluster { fill: var(--cluster-fill, var(--fill, #f3f5f8)); stroke: var(--cluster-stroke, var(--line-2, #d6dae1)); stroke-width: 1; stroke-dasharray: 4 3; }
 .am-diagram .am-cluster-label { fill: var(--ink-2, #4b5260); font: 11px var(--font-mono, monospace); }
-.am-lifeline { stroke: var(--ink-3, #8b929e); stroke-width: 1; stroke-dasharray: 4 4; }
-.am-actor { fill: var(--paper, #ffffff); stroke: var(--line, #1d2026); stroke-width: var(--bw, 1.5px); }
-.am-note { fill: var(--warn-bg, #fdf3e2); stroke: var(--warn, #a8620a); stroke-width: 1; }
+/* The PK / FK / UK marks of an entity follow the node text, and the highlighted text in a highlighted entity, so they stay readable on the theme's fills. */
+.am-diagram .am-er-key { fill: var(--node-text, var(--ink-2, #4b5260)); }
+.am-diagram .am-node--hi .am-er-key { fill: var(--hi-text, var(--ink-2, #4b5260)); }
+.am-lifeline { stroke: var(--lifeline-color, var(--ink-3, #8b929e)); stroke-width: 1; stroke-dasharray: 4 4; }
+/* An actor (and the box of a divider) looks like a node unless the theme sets the actor tokens. */
+.am-actor { fill: var(--actor-fill, var(--node-fill, var(--paper, #ffffff))); stroke: var(--actor-stroke, var(--node-stroke, var(--line, #1d2026))); stroke-width: var(--node-width, var(--bw, 1.5px)); filter: var(--node-shadow, none); rx: var(--node-radius, 2px); }
+.am-diagram .am-actor-text { fill: var(--actor-text, var(--node-text, var(--ink, #16181d))); }
+.am-note { fill: var(--note-fill, var(--warn-bg, #fdf3e2)); stroke: var(--note-stroke, var(--warn, #a8620a)); stroke-width: var(--note-width, 1); rx: var(--note-radius, 2px); }
 .am-diagram .am-step { fill: var(--ink-3, #8b929e); font: 10px var(--font-mono, monospace); }
 
 .am-diagram-expand {
@@ -677,7 +757,7 @@ code, pre, kbd { font-family: var(--font-mono); }
 .am-colophon a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 
 @media print {
-  .am-toolbar, .am-diagram-expand, .am-lightbox, .am-code-copy, .am-comment-btn, .am-comment, .am-reply { display: none !important; }
+  .am-toolbar, .am-diagram-expand, .am-lightbox, .am-code-copy, .am-comment-btn, .am-comment, .am-reply, .am-reply-bar { display: none !important; }
   body { background: var(--paper); }
   .am-panel { break-inside: avoid; box-shadow: none; }
 }
@@ -726,37 +806,80 @@ table.am-mark { background: none; }
 @media print { .am-remark-pop { display: none !important; } }
 
 
-html[data-theme="blueprint"] .am-frame { border: 1px solid var(--line); padding: 30px; }
-html[data-theme="blueprint"] .am-frame::before {
-  content: ""; position: absolute; inset: 18px; border: 1px solid var(--line); pointer-events: none;
-}
-html[data-theme="blueprint"] .am-ruler {
-  display: flex; position: absolute; font: 10px/1 var(--font-mono); color: var(--ink-3);
-}
-@media (max-width: 760px) {
-  html[data-theme="blueprint"] .am-frame { padding: 0; border: 0; }
-  html[data-theme="blueprint"] .am-frame::before, html[data-theme="blueprint"] .am-ruler { display: none; }
-}
+html[data-theme="eoic-card"] .am-head h1 { font-weight: 700; letter-spacing: -0.01em; }
+html[data-theme="eoic-card"] .am-head .am-sub { color: var(--accent); font-weight: 600; }
+html[data-theme="eoic-card"] .am-panel { border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+html[data-theme="eoic-card"] .am-panel-head { background: var(--paper); border-bottom: 1px solid var(--line); }
+html[data-theme="eoic-card"] .am-panel-id { border-radius: 8px; background: var(--accent); color: #fff; min-width: 26px; height: 26px; margin: 11px 0 11px 16px; font-size: 12px; font-weight: 700; }
+html[data-theme="eoic-card"] .am-panel-head h2 { font-weight: 650; letter-spacing: -0.005em; }
+html[data-theme="eoic-card"] .am-panel-body { padding-top: 16px; }
+html[data-theme="eoic-card"] .am-callout { border-radius: 12px; border-left-width: 4px; }
+html[data-theme="eoic-card"] .am-callout-title { font-weight: 700; }
+html[data-theme="eoic-card"] .am-kv { border-radius: 12px; overflow: hidden; background: var(--fill); }
+html[data-theme="eoic-card"] .am-kv-cell dt { font-size: 11.5px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-3); }
+html[data-theme="eoic-card"] .am-kv-cell dd { font-variant-numeric: tabular-nums; font-weight: 650; }
+html[data-theme="eoic-card"] .am-md table { font-variant-numeric: tabular-nums; border-radius: 10px; }
+html[data-theme="eoic-card"] .am-md thead th { background: var(--fill); color: var(--ink-2); font-size: 12px; letter-spacing: 0.03em; }
+html[data-theme="eoic-card"] .am-md tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--fill) 55%, transparent); }
+html[data-theme="eoic-card"] .am-md tbody tr:last-child td { border-bottom: 0; }
+html[data-theme="eoic-card"] .am-md p, html[data-theme="eoic-card"] .am-md li { line-height: 1.7; }
+html[data-theme="eoic-card"] .am-md strong { color: var(--ink); }
+html[data-theme="eoic-card"] .am-toc a { border-radius: 8px; }
+html[data-theme="eoic-card"] .am-md table { margin-bottom: 16px; }
+html[data-theme="eoic-card"] .am-md p + p { margin-top: 10px; }
 
-html[data-theme="shadcn"] .am-panel-id { border-radius: 6px; min-width: 24px; height: 24px; margin: 9px 0 9px 14px; font-size: 12px; }
-html[data-theme="shadcn"] .am-panel-head { border-bottom-width: 1px; }
-html[data-theme="shadcn"] .am-kv { border-color: var(--line); border-radius: var(--radius); overflow: hidden; }
+html[data-theme="eoic-paper"] { --font-serif: "Iowan Old Style", Palatino, Georgia, "Songti TC", "Noto Serif TC", "Noto Serif CJK TC", "PMingLiU", serif; }
+html[data-theme="eoic-paper"] .am-head h1, html[data-theme="eoic-paper"] .am-panel-head h2, html[data-theme="eoic-paper"] .am-md, html[data-theme="eoic-paper"] .am-intro, html[data-theme="eoic-paper"] .am-callout { font-family: var(--font-serif); }
+html[data-theme="eoic-paper"] .am-head h1 { font-weight: 700; letter-spacing: 0.01em; border-bottom: 3px double var(--ink); padding-bottom: 14px; }
+html[data-theme="eoic-paper"] .am-head .am-sub { font-family: var(--font-serif); font-style: italic; color: var(--accent); }
+html[data-theme="eoic-paper"] .am-panel { background: var(--paper); border: 1px solid var(--line); border-top: 2px solid var(--ink); }
+html[data-theme="eoic-paper"] .am-panel-head { background: transparent; border-bottom: 1px solid var(--line); }
+html[data-theme="eoic-paper"] .am-panel-id { background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 50%; font-family: var(--font-serif); font-style: italic; }
+html[data-theme="eoic-paper"] .am-panel-head h2 { font-weight: 650; }
+html[data-theme="eoic-paper"] .am-md p, html[data-theme="eoic-paper"] .am-md li { font-size: 15.5px; line-height: 1.85; }
+html[data-theme="eoic-paper"] .am-callout { border-radius: 0; border-left-width: 3px; background: var(--accent-bg); }
+html[data-theme="eoic-paper"] .am-callout-title { font-weight: 700; }
+html[data-theme="eoic-paper"] .am-kv { border-radius: 0; border-color: var(--ink); border-width: 1px 0; }
+html[data-theme="eoic-paper"] .am-kv-cell dt { font-family: var(--font-sans); font-size: 11.5px; letter-spacing: 0.08em; color: var(--ink-3); }
+html[data-theme="eoic-paper"] .am-kv-cell dd { font-family: var(--font-serif); font-variant-numeric: tabular-nums; font-weight: 700; }
+html[data-theme="eoic-paper"] .am-md table { font-family: var(--font-sans); font-variant-numeric: tabular-nums; border-radius: 0; border-top: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); }
+html[data-theme="eoic-paper"] .am-md thead th { background: transparent; border-bottom: 1px solid var(--ink); color: var(--ink); font-size: 12px; }
+html[data-theme="eoic-paper"] .am-md td, html[data-theme="eoic-paper"] .am-md th { border-left: 0; border-right: 0; }
+html[data-theme="eoic-paper"] .am-md table { margin-bottom: 18px; }
+html[data-theme="eoic-paper"] .am-callout--ok { background: var(--ok-bg); }
+html[data-theme="eoic-paper"] .am-callout--err { background: var(--err-bg); }
+html[data-theme="eoic-paper"] .am-callout--warn { background: var(--warn-bg); }
 
-html[data-theme="paper"]:lang(zh-Hant)[data-mode], html[data-theme="paper"]:lang(zh-TW)[data-mode], html[data-theme="paper"]:lang(zh-HK)[data-mode], html[data-theme="paper"]:lang(zh-MO)[data-mode] { --font-serif: "Iowan Old Style", Palatino, Georgia, "Songti TC", "PMingLiU", "MingLiU", "Noto Serif CJK TC", "Noto Serif TC", "Source Han Serif TC", "Songti SC", serif; }
-html[data-theme="paper"]:lang(ja)[data-mode] { --font-serif: "Iowan Old Style", Palatino, Georgia, "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif CJK JP", "Noto Serif JP", "Songti SC", serif; }
-html[data-theme="paper"]:lang(he)[data-mode] { --font-serif: "Iowan Old Style", Palatino, Georgia, "Noto Serif Hebrew", "Frank Ruehl CLM", David, "Times New Roman", serif; }
-html[data-theme="paper"] .am-head h1, html[data-theme="paper"] .am-panel-head h2, html[data-theme="paper"] .am-md, html[data-theme="paper"] .am-intro, html[data-theme="paper"] .am-callout { font-family: var(--font-serif); }
-html[data-theme="paper"] .am-head h1 { font-weight: 600; letter-spacing: 0; }
-html[data-theme="paper"] .am-md p, html[data-theme="paper"] .am-md li, html[data-theme="paper"] .am-md blockquote, html[data-theme="paper"] .am-intro { font-size: 15.5px; line-height: 1.75; }
-html[data-theme="paper"] .am-md p { margin-bottom: 12px; }
-html[data-theme="paper"] .am-md table { font-family: var(--font-sans); }
+html[data-theme="eoic-swiss"] .am-head h1 { font-size: 40px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; }
+html[data-theme="eoic-swiss"] .am-head .am-sub { color: var(--accent); font-weight: 700; font-size: 16px; }
+html[data-theme="eoic-swiss"] .am-panel { background: transparent; border: 0; border-top: 4px solid var(--ink); border-radius: 0; box-shadow: none; padding-top: 4px; }
+html[data-theme="eoic-swiss"] .am-panel-head { background: transparent; border-bottom: 0; align-items: baseline; }
+html[data-theme="eoic-swiss"] .am-panel-id { background: transparent; color: var(--accent); border: 0; border-radius: 0; font-size: 34px; font-weight: 800; letter-spacing: -0.04em; min-width: 0; height: auto; line-height: 1; margin: 8px 14px 4px 0; }
+html[data-theme="eoic-swiss"] .am-panel-head h2 { font-size: 20px; font-weight: 800; letter-spacing: -0.01em; color: var(--ink); }
+html[data-theme="eoic-swiss"] .am-panel-body { padding-top: 10px; }
+html[data-theme="eoic-swiss"] .am-callout { border-radius: 0; border: 0; border-left: 6px solid var(--accent); background: var(--fill); }
+html[data-theme="eoic-swiss"] .am-callout--ok { border-left-color: var(--ok); background: var(--ok-bg); }
+html[data-theme="eoic-swiss"] .am-callout--warn { border-left-color: var(--warn); background: var(--warn-bg); }
+html[data-theme="eoic-swiss"] .am-callout--err { border-left-color: var(--err); background: var(--err-bg); }
+html[data-theme="eoic-swiss"] .am-callout-title { font-weight: 800; font-size: 16px; }
+html[data-theme="eoic-swiss"] .am-kv { border-radius: 0; border-color: var(--ink); border-width: 2px 0 1px; background: transparent; }
+html[data-theme="eoic-swiss"] .am-kv-cell dt { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); }
+html[data-theme="eoic-swiss"] .am-kv-cell dd { font-size: 19px; font-weight: 800; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+html[data-theme="eoic-swiss"] .am-md table { border-radius: 0; border: 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--ink); font-variant-numeric: tabular-nums; margin-bottom: 16px; }
+html[data-theme="eoic-swiss"] .am-md thead th { background: transparent; color: var(--ink); font-size: 11.5px; font-weight: 800; letter-spacing: 0.06em; border-bottom: 1px solid var(--ink); }
+html[data-theme="eoic-swiss"] .am-md td, html[data-theme="eoic-swiss"] .am-md th { border-left: 0; border-right: 0; }
+html[data-theme="eoic-swiss"] .am-md tbody tr:hover td { background: var(--fill); }
+html[data-theme="eoic-swiss"] .am-md p, html[data-theme="eoic-swiss"] .am-md li { line-height: 1.75; }
+html[data-theme="eoic-swiss"] .am-md p + p { margin-top: 10px; }
+html[data-theme="eoic-swiss"] .am-md strong { font-weight: 800; }
+html[data-theme="eoic-swiss"] .am-toc a { border-radius: 0; font-weight: 600; }
 </style>
 </head>
 <body>
-<div class="am-toolbar" data-am-root-lang="zh-Hant" data-am-root-theme="paper" data-am-root-mode="auto" data-am-root-style="off">
-<label class="am-pick">主題<select data-am="theme"><option value="blueprint">圖紙</option><option value="shadcn">卡片</option><option value="paper" selected>紙張</option></select></label>
+<div class="am-toolbar" data-am-root-lang="zh-Hant" data-am-root-theme="eoic-card" data-am-root-mode="auto" data-am-root-style="off">
+<label class="am-pick">主題<select data-am="theme"><option value="eoic-card" selected>卡片</option><option value="eoic-paper">紙張</option><option value="eoic-swiss">瑞士</option></select></label>
 <label class="am-pick">明暗<select data-am="mode"><option value="auto" selected>跟隨系統</option><option value="light">淺色</option><option value="dark">深色</option></select></label>
-<button class="am-btn am-btn--reply" type="button" data-am="reply" data-ui="{&quot;button&quot;:&quot;回覆&quot;,&quot;comment&quot;:&quot;評論&quot;,&quot;commentHint&quot;:&quot;對這個面板的意見&quot;,&quot;title&quot;:&quot;你的回覆&quot;,&quot;hint&quot;:&quot;複製後貼到對話裡。&quot;,&quot;copy&quot;:&quot;複製回覆&quot;,&quot;close&quot;:&quot;關閉&quot;,&quot;suggested&quot;:&quot;建議&quot;,&quot;empty&quot;:&quot;先選擇選項，或在面板上寫評論。&quot;,&quot;decisions&quot;:&quot;決定&quot;,&quot;comments&quot;:&quot;評論&quot;,&quot;confirmed&quot;:&quot;確認了建議&quot;,&quot;untouched&quot;:&quot;未作答，保留建議&quot;,&quot;was&quot;:&quot;原為&quot;,&quot;typed&quot;:&quot;以 \&quot;&gt;\&quot; 開頭的行是讀者輸入的文字。&quot;,&quot;done&quot;:&quot;已複製 ✓&quot;,&quot;remarks&quot;:&quot;標註&quot;,&quot;kinds&quot;:{&quot;suggestion&quot;:&quot;建議&quot;,&quot;keep&quot;:&quot;保留&quot;,&quot;question&quot;:&quot;疑問&quot;,&quot;concern&quot;:&quot;關注&quot;}}">回覆</button>
+<button class="am-btn am-btn--reply" type="button" data-am="reply" data-ui="{&quot;button&quot;:&quot;回覆&quot;,&quot;comment&quot;:&quot;評論&quot;,&quot;commentHint&quot;:&quot;對這個面板的意見&quot;,&quot;title&quot;:&quot;你的回覆&quot;,&quot;hint&quot;:&quot;複製後貼回和 Agent 的對話，它會按你的選擇和意見繼續。&quot;,&quot;copy&quot;:&quot;複製回覆&quot;,&quot;copyFailed&quot;:&quot;複製失敗 — 請按 Cmd/Ctrl+C&quot;,&quot;close&quot;:&quot;關閉&quot;,&quot;suggested&quot;:&quot;建議&quot;,&quot;empty&quot;:&quot;先選擇選項，或在面板上寫評論。&quot;,&quot;decisions&quot;:&quot;決定&quot;,&quot;comments&quot;:&quot;評論&quot;,&quot;confirmed&quot;:&quot;確認了建議&quot;,&quot;untouched&quot;:&quot;未作答，保留建議&quot;,&quot;was&quot;:&quot;原為&quot;,&quot;typed&quot;:&quot;以 \&quot;&gt;\&quot; 開頭的行是讀者輸入的文字。&quot;,&quot;raw&quot;:&quot;查看將複製的文字&quot;,&quot;preview&quot;:&quot;預覽&quot;,&quot;count&quot;:{&quot;answered&quot;:&quot;已作答 {n} 項&quot;,&quot;comments&quot;:&quot;評論 {n} 則&quot;,&quot;remarks&quot;:&quot;標註 {n} 處&quot;},&quot;done&quot;:&quot;已複製 ✓&quot;,&quot;remarks&quot;:&quot;標註&quot;,&quot;kinds&quot;:{&quot;suggestion&quot;:&quot;建議&quot;,&quot;keep&quot;:&quot;保留&quot;,&quot;question&quot;:&quot;疑問&quot;,&quot;concern&quot;:&quot;關注&quot;}}">回覆</button>
 <button class="am-btn am-btn--remark" type="button" data-am="remark" data-ui="{&quot;button&quot;:&quot;標註&quot;,&quot;hint&quot;:&quot;批註（可選）&quot;,&quot;save&quot;:&quot;儲存&quot;,&quot;remove&quot;:&quot;刪除&quot;,&quot;section&quot;:&quot;標註&quot;,&quot;kinds&quot;:{&quot;suggestion&quot;:&quot;建議&quot;,&quot;keep&quot;:&quot;保留&quot;,&quot;question&quot;:&quot;疑問&quot;,&quot;concern&quot;:&quot;關注&quot;}}">標註</button>
 <button class="am-btn" type="button" data-am="copy" data-done="已複製 ✓">複製源稿</button>
 </div>
@@ -1337,9 +1460,61 @@ function replyText({ title, decisions, comments, remarks = [], ui, rtl = false }
   return `${out.join('\n')}\n`;
 }
 
+// A letter of a right-to-left script. One definition for the page builder (src/bidi.js) and for the right-to-left page script
+// (src/runtime/reply-view.js), so the two cannot drift apart. A plain ES module; the page script gets this file in front of
+// reply-view.js, with its `export` keyword dropped and reply-view.js's import of it removed (src/runtime/compose.js).
+const RTL_LETTER = /[\p{Script=Hebrew}\p{Script=Arabic}\p{Script=Syriac}\p{Script=Thaana}\p{Script=Nko}\p{Script=Samaritan}\p{Script=Mandaic}]/u;
+
+// The reply as the reader sees it in the Reply sheet (src/runtime/reply.js): the Markdown that Copy copies, drawn as headings, bold answers
+// and quoted comments instead of raw "# Re: ...", "1. [E] ..." and "- **A · ...**" lines. Each line gets its own direction, so a
+// Hebrew reader sees Latin answers and paths in place; a line with no right-to-left letter reads left to right, as on any other page.
+// The raw Markdown stays in the sheet under a fold, so the copied text does not change.
+// A plain ES module for tests; the page gets it with its `export` keyword dropped and rtl-letter.js in front of it in place of the
+// import (src/runtime/compose.js).
+
+const escHtml = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+// A line with a right-to-left letter reads right to left; a line without one (an English comment, a path) reads left to right.
+const dirOf = (s) => (RTL_LETTER.test(s) ? 'rtl' : 'ltr');
+
+// The only inline Markdown src/runtime/reply-text.js writes: **answer**, _(note)_ and the "quote" of a remark. Each piece is isolated in its own direction,
+// so a Latin answer inside a Hebrew line keeps its place, and "A · title" still starts with the panel letter.
+const piece = (tag, text) => `<${tag}><bdi dir="${dirOf(text)}">${text}</bdi></${tag}>`;
+function inline(s) {
+  return escHtml(s)
+    .replace(/\*\*(.+?)\*\*/g, (_, t) => piece('strong', t))
+    .replace(/(^|\s)_(.+?)_(?=\s|$)/g, (_, pre, t) => pre + piece('em', t))
+    // The quoted start of a marked block ("- **A · concern** "text""): isolated, so Latin text in a Hebrew line keeps its place.
+    .replace(/&quot;(.+)&quot;$/, (_, t) => `&quot;<bdi dir="${dirOf(t)}">${t}</bdi>&quot;`);
+}
+
+// The reply text (src/runtime/reply-text.js) as HTML, one block per line.
+function replyViewHtml(text) {
+  return text
+    .replace(/\n$/, '')
+    .split('\n')
+    .map((line) => {
+      const dir = dirOf(line);
+      let m;
+      if (!line.trim()) return '<div class="am-rv-gap"></div>';
+      if ((m = line.match(/^(#{1,2}) (.*)$/))) return `<div class="am-rv-h${m[1].length}" dir="${dir}">${inline(m[2])}</div>`;
+      if ((m = line.match(/^(\d+)\. \[([^\]]*)\] (.*)$/))) {
+        return `<div class="am-rv-q" dir="${dir}"><bdi>${m[1]}.</bdi> <bdi class="am-rv-tag">${escHtml(m[2])}</bdi> ${inline(m[3])}</div>`;
+      }
+      if ((m = line.match(/^ {3}([←→]) (.*)$/))) return `<div class="am-rv-a" dir="${dir}">${m[1]} ${inline(m[2])}</div>`;
+      if ((m = line.match(/^- (.*)$/))) return `<div class="am-rv-c" dir="${dir}">${inline(m[1])}</div>`;
+      // A comment line is shown exactly as the reader typed it.
+      if ((m = line.match(/^ {2}> ?(.*)$/))) return `<div class="am-rv-quote" dir="${dirOf(m[1])}">${escHtml(m[1]) || '&nbsp;'}</div>`;
+      return `<div dir="${dir}">${inline(line)}</div>`;
+    })
+    .join('');
+}
+
 // Answer on the page: every panel gets a Comment box, and the Reply button collects the ask answers, the comments and the remarks
 // into one Markdown reply (replyText) to copy back to the agent. Answers and comments stay in localStorage across reloads.
-// The remark script (remark.js) adds the blocks the reader marked, through window.__amRemarkData.
+// The remark script (remark.js) adds the blocks the reader marked, through window.__amRemarkData, and tells this script about a change
+// with an "am-remark-change" event on the document.
+// The Reply sheet shows the reply drawn (replyViewHtml) with the Markdown that Copy copies under a fold. Once the reader has given any
+// input, a bar at the bottom of the page shows the counts and copies the reply in one click, so there is no trip to the top-right button.
 const replyBtn = document.querySelector('[data-am="reply"]');
 const COMMENT_ICON = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>';
 if (replyBtn) {
@@ -1355,6 +1530,10 @@ if (replyBtn) {
   const keyOf = (ask) => textOf(ask.querySelector('legend')) ?? ask.dataset.ask;
   const touched = new Set();
   const boxes = new Map();
+  // The bar is built below with the sheet; the handlers that change the counts only call this.
+  let refreshBar = () => {};
+  // The textarea a failed copy keeps selected, so the reader can still use the keyboard shortcut.
+  let stuck = null;
 
   const load = () => {
     try {
@@ -1393,6 +1572,7 @@ if (replyBtn) {
     const answer = () => {
       touched.add(ask);
       save();
+      refreshBar();
     };
     ask.addEventListener('change', answer);
     ask.addEventListener('click', (e) => { if (e.target.matches('input')) answer(); });
@@ -1419,6 +1599,7 @@ if (replyBtn) {
     box.addEventListener('input', () => {
       btn.classList.toggle('am-comment-btn--on', Boolean(box.value.trim()));
       save();
+      refreshBar();
     });
     btn.classList.toggle('am-comment-btn--on', Boolean(box.value.trim()));
     if (box.value.trim()) show(true);
@@ -1430,9 +1611,12 @@ if (replyBtn) {
   const sheet = document.createElement('dialog');
   sheet.className = 'am-reply';
   sheet.setAttribute('aria-label', ui.title);
-  sheet.innerHTML = '<div class="am-reply-head"><strong></strong><span></span></div><textarea readonly rows="14"></textarea><div class="am-reply-actions"><button type="button" class="am-btn" data-act="copy"></button><button type="button" class="am-btn" data-act="close"></button></div>';
+  sheet.innerHTML = '<div class="am-reply-head"><strong></strong><span></span></div><div class="am-reply-view" tabindex="0"></div><details class="am-reply-raw"><summary></summary><textarea readonly rows="10"></textarea></details><div class="am-reply-actions"><button type="button" class="am-btn" data-act="copy"></button><button type="button" class="am-btn" data-act="close"></button></div>';
   sheet.querySelector('strong').textContent = ui.title;
   sheet.querySelector('span').textContent = ui.hint;
+  sheet.querySelector('summary').textContent = ui.raw;
+  const view = sheet.querySelector('.am-reply-view');
+  const raw = sheet.querySelector('details');
   const text = sheet.querySelector('textarea');
   const copy = sheet.querySelector('[data-act="copy"]');
   const close = sheet.querySelector('[data-act="close"]');
@@ -1455,25 +1639,90 @@ if (replyBtn) {
     return empty ? '' : replyText({ title, decisions, comments, remarks, ui, rtl: document.documentElement.dir === 'rtl' });
   };
 
-  replyBtn.addEventListener('click', () => {
+  // The text goes through the clipboard API; a page the browser treats as insecure (file://) falls back to selecting a temporary
+  // textarea, because the sheet's own textarea can sit inside a closed fold, where it cannot be selected.
+  // That fallback reports whether it worked. When it does not, the text stays selected (so Cmd/Ctrl+C still copies it) and the
+  // button says what to do instead of showing the "Copied ✓" label the reader cannot trust.
+  const copyText = async (str, btn) => {
+    stuck?.remove();
+    stuck = null;
+    try {
+      await navigator.clipboard.writeText(str);
+      // The close_after_reply script (close-after-reply.js) closes the tab once the reply is on the clipboard.
+      document.dispatchEvent(new Event('am-reply-copied'));
+    } catch {
+      const tmp = Object.assign(document.createElement('textarea'), { value: str });
+      tmp.style.cssText = 'position:fixed;top:-100px;opacity:0';
+      // Inside the sheet while it is open: while a modal dialog is open the rest of the document cannot take focus, so a textarea
+      // in the body can be selected but not focused, and the keyboard shortcut the reader is told to press would copy nothing.
+      // The bottom bar copies while the sheet is closed, and a closed dialog is not rendered, so there the textarea goes in the body.
+      (sheet.open ? sheet : document.body).append(tmp);
+      tmp.select();
+      let copied = false;
+      try {
+        copied = document.execCommand('copy');
+      } catch {
+        copied = false;
+      }
+      if (!copied) {
+        stuck = tmp;
+        btn.textContent = ui.copyFailed;
+        setTimeout(() => { btn.textContent = ui.copy; }, 3000);
+        return;
+      }
+      tmp.remove();
+    }
+    btn.textContent = ui.done;
+    setTimeout(() => { btn.textContent = ui.copy; }, 1400);
+  };
+
+  const open = () => {
     const reply = compose();
-    text.value = reply || ui.empty;
+    if (reply) view.innerHTML = replyViewHtml(reply);
+    else view.textContent = ui.empty;
+    view.scrollTop = 0;
+    text.value = reply;
+    raw.open = false;
+    raw.hidden = !reply;
     copy.disabled = !reply;
     if (sheet.showModal) sheet.showModal();
     else sheet.setAttribute('open', '');
     (reply ? copy : close).focus();
-  });
+  };
+  replyBtn.addEventListener('click', open);
   close.addEventListener('click', () => (sheet.close ? sheet.close() : sheet.removeAttribute('open')));
-  copy.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(text.value);
-    } catch {
-      text.select();
-      document.execCommand('copy');
-    }
-    copy.textContent = ui.done;
-    setTimeout(() => { copy.textContent = ui.copy; }, 1400);
-  });
+  // A failed copy leaves the text selected for Cmd/Ctrl+C; closing the sheet drops that textarea.
+  sheet.addEventListener('close', () => { stuck?.remove(); stuck = null; });
+  copy.addEventListener('click', () => copyText(text.value, copy));
+
+  const bar = Object.assign(document.createElement('div'), { className: 'am-reply-bar', hidden: true });
+  bar.setAttribute('role', 'region');
+  bar.setAttribute('aria-label', ui.title);
+  const summary = Object.assign(document.createElement('span'), { className: 'am-reply-bar-count' });
+  summary.setAttribute('aria-live', 'polite');
+  const preview = Object.assign(document.createElement('button'), { type: 'button', className: 'am-btn', textContent: ui.preview });
+  const barCopy = Object.assign(document.createElement('button'), { type: 'button', className: 'am-btn am-btn--reply', textContent: ui.copy });
+  preview.addEventListener('click', open);
+  barCopy.addEventListener('click', () => copyText(compose(), barCopy));
+  bar.append(summary, preview, barCopy);
+  document.body.append(bar);
+
+  // The bar shows only the counts that are above zero, and only once there is any input at all.
+  refreshBar = () => {
+    const counts = {
+      answered: touched.size,
+      comments: [...boxes.values()].filter((box) => box.value.trim()).length,
+      remarks: (window.__amRemarkData?.() ?? []).length,
+    };
+    const parts = Object.entries(counts).filter(([, n]) => n > 0).map(([kind, n]) => ui.count[kind].replace('{n}', n));
+    summary.textContent = parts.join(' · ');
+    bar.hidden = !parts.length;
+    document.body.classList.toggle('am-has-reply-bar', parts.length > 0);
+  };
+  document.addEventListener('am-remark-change', () => refreshBar());
+  // Saved remarks are restored by remark.js, which runs after this script in the same <script> element: its data is not there yet.
+  // A microtask runs when that whole element has finished, so the first count includes them.
+  queueMicrotask(() => refreshBar());
 }
 })();
 (() => {
@@ -1577,6 +1826,8 @@ function occurrenceKeys(bases) {
     } catch {
       // Storage may be off (private window, a sandboxed page); marks then last until the page closes.
     }
+    // The reply bar (reply.js) shows the number of marks.
+    document.dispatchEvent(new Event('am-remark-change'));
   };
 
   const chip = (el, mark) => {
@@ -2140,5 +2391,5 @@ if (panels.length > 1) {
 })();
 })();
 </script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4a83bbba89897d2',t:'MTc5MTk5ODIwMg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
