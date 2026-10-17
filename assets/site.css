@@ -29,9 +29,9 @@ table{border-top:2px solid var(--ink);border-bottom:1px solid var(--ink)}thead t
 /* answer-me-with-html 圖表與進階元件樣式（flow / sequence / er / tree / limits / annot / code） */
 .am-diagram{margin:1.5rem 0;padding:1rem;border:1px solid var(--line);background:var(--paper);overflow-x:auto;text-align:center}.am-diagram svg{max-width:100%;height:auto;font-family:inherit}.am-diagram text{fill:var(--ink);font-size:13px}.am-node-shape{fill:var(--paper);stroke:var(--ink);stroke-width:1.5px}.am-node--rect .am-node-shape,.am-node--er .am-node-shape{rx:0}.am-node--hi .am-node-shape{fill:var(--monetized-bg);stroke:var(--accent);stroke-width:2px}.am-diagram .am-node-text{fill:var(--ink)}.am-node--hi text,.am-diagram .am-node--hi .am-node-text{fill:var(--accent);font-weight:700}.am-edge{fill:none;stroke:var(--muted);stroke-width:1.4}.am-edge--dashed{stroke-dasharray:5 4}.am-arrow{fill:var(--muted)}.am-edge-label rect{fill:var(--paper)}.am-diagram .am-edge-label text{fill:var(--accent);font-size:11.5px;font-weight:600}.am-cluster{fill:var(--tag-bg);stroke:var(--line);stroke-width:1;stroke-dasharray:4 3}.am-diagram .am-cluster-label{fill:var(--muted);font:11px ui-monospace,Consolas,monospace}.am-diagram .am-er-key{fill:var(--muted)}.am-diagram .am-node--hi .am-er-key{fill:var(--accent)}.am-lifeline{stroke:var(--weak);stroke-width:1;stroke-dasharray:4 4}.am-actor{fill:var(--paper);stroke:var(--ink);stroke-width:1.5px;rx:0}.am-diagram .am-actor-text{fill:var(--ink);font-weight:700}.am-note{fill:var(--unmonetized-bg);stroke:var(--unmonetized-ink);stroke-width:1;rx:0}.am-diagram .am-step{fill:var(--weak);font:10px ui-monospace,Consolas,monospace}
 .am-limits{margin:1.5rem 0;padding:1rem 1.2rem;border:1px solid var(--line);background:var(--paper)}.am-lim+.am-lim{margin-top:14px}.am-lim-head{display:flex;justify-content:space-between;gap:12px;font-size:13px;font-weight:700;margin-bottom:4px}.am-lim-val{font:12px ui-monospace,Consolas,monospace;color:var(--accent);white-space:nowrap}.am-lim-track{position:relative;height:12px;border:1px solid var(--line);background:var(--tag-bg)}.am-lim-fill{position:absolute;inset-inline-start:0;top:0;bottom:0;background:var(--monetized-bg);border-inline-end:2px solid var(--accent)}.am-lim-mark{position:absolute;top:-4px;bottom:-4px;border-left:2px solid var(--ink)}.am-lim.is-over .am-lim-fill{background:var(--unmonetized-bg);border-inline-end-color:var(--danger)}.am-lim.is-over .am-lim-val{color:var(--danger)}.am-lim-ticks{position:relative;height:16px;font:10px/16px ui-monospace,Consolas,monospace;color:var(--weak)}.am-lim-ticks span{position:absolute;transform:translateX(-50%)}.am-lim-ticks span:first-child{transform:none}.am-lim-note{font-size:11px;color:var(--muted);margin-inline-start:6px}
-.am-tree{margin:1.5rem 0;padding:1rem;border:1px solid var(--line);background:var(--paper);font-size:13px}.am-tree-root{display:flex;justify-content:center;position:relative;padding-bottom:18px}.am-tree-root::after{content:"";position:absolute;bottom:0;left:50%;height:18px;border-left:1.5px solid var(--ink)}.am-tree-root--solo{padding-bottom:12px}.am-tree-root--solo::after{display:none}.am-tree-box{border:1.5px solid var(--ink);background:var(--paper);padding:6px 14px;text-align:center;font-weight:700;color:var(--ink)}.am-tree-box small{display:block;font-weight:400;color:var(--muted);font-size:12px}.am-tree-box--root,.am-tree-box--hi{border-color:var(--accent);color:var(--accent)}.am-tree-box--root{background:var(--monetized-bg);font-size:15px;padding:8px 28px}.am-tree-cols{display:grid;grid-template-columns:repeat(var(--n,1),minmax(0,1fr))}.am-tree-col{position:relative;padding:18px 8px 0;min-width:0}.am-tree-col::before{content:"";position:absolute;top:0;left:0;right:0;border-top:1.5px solid var(--ink)}.am-tree-col:first-child::before{inset-inline-start:50%}.am-tree-col:last-child::before{inset-inline-end:50%}.am-tree-col::after{content:"";position:absolute;top:0;left:50%;height:18px;border-left:1.5px solid var(--ink)}.am-tree-list{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}.am-tree-list li{border:1px solid var(--line);background:var(--tag-bg);padding:5px 8px;font-size:12px}
-
-/* ==========================================================================
+.am-tree{margin:1.5rem 0;padding:1rem;border:1px solid var(--line);background:var(--paper);font-size:13px}.am-tree-root{display:flex;justify-content:center;position:relative;padding-bottom:18px}.am-tree-root::after{content:"";position:absolute;bottom:0;left:50%;height:18px;border-left:1.5px solid var(--ink)}.am-tree-root--solo{padding-bottom:12px}.am-tree-root--solo::after{display:none}.am-tree-box{border:1.5px solid var(--ink);background:var(--paper);padding:6px 14px;text-align:center;font-weight:700;color:var(--ink)}.am-tree-box small{display:block;font-weight:400;color:var(--muted);font-size:12px}.am-tree-box--root,.am-tree-box--hi{border-color:var(--accent);color:var(--accent)}.am-tree-box--root{background:var(--monetized-bg);font-size:15px;padding:8px 28px}.am-tree-cols{display:grid;grid-template-columns:repeat(var(--n,1),minmax(0,1fr))}.am-tree-col{position:relative;padding:18px 8px 0;min-width:0}.am-tree-col::before{content:"";position:absolute;top:0;left:0;right:0;border-top:1.5px solid var(--ink)}.am-tree-col:first-child::before{inset-inline-start:50%}.am-tree-col:last-child::before{inset-inline-end:50%}.am-tree-col::after{content:"";position:absolute;top
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              /* ==========================================================================
    r9 終極完整版：Open-Claude-UI (CDS) 五大質感全量升級
    包含：1.四層表面階梯 2.髮絲細邊與微光 3.水霧滾動遮罩 4.彈簧微交互 5.光學字體與深色逆補償
    原則：100% 保留原品牌色 (#0F766E / #5EEAD4)、不動結構、不影響現有功能
@@ -52,13 +52,13 @@ table{border-top:2px solid var(--ink);border-bottom:1px solid var(--ink)}thead t
   --accent-ring: rgba(15, 118, 110, 0.45);
 
   /* [2] 視網膜高分屏 0.5px 髮絲細邊 (Hairline Ring) 與雙環微光投影 */
-  --cds-hairline: 0 0 0 0.5px rgba(10, 10, 10, 0.14);
+  --cds-hairline: 0 0 0 0.5px rgba(10, 10, 10, 0.12);
   --cds-hairline-strong: 0 0 0 1px rgba(10, 10, 10, 0.22);
   --cds-shadow-idle: 
-    0 1px 2px -1px rgba(10, 10, 10, 0.05),
-    0 2px 6px 0 rgba(10, 10, 10, 0.03);
+    0 1px 2px -1px rgba(10, 10, 10, 0.04),
+    0 2px 5px 0 rgba(10, 10, 10, 0.02);
   --cds-shadow-elevated: 
-    0 8px 24px -4px rgba(10, 10, 10, 0.07),
+    0 8px 24px -4px rgba(10, 10, 10, 0.06),
     0 2px 6px -1px rgba(10, 10, 10, 0.04),
     0 0 0 1px var(--accent);
 
@@ -100,7 +100,7 @@ table{border-top:2px solid var(--ink);border-bottom:1px solid var(--ink)}thead t
     --accent-glow: rgba(94, 234, 212, 0.07);
     --accent-ring: rgba(94, 234, 212, 0.45);
 
-    --cds-hairline: 0 0 0 0.5px rgba(255, 255, 255, 0.12);
+    --cds-hairline: 0 0 0 0.5px rgba(255, 255, 255, 0.11);
     --cds-hairline-strong: 0 0 0 1px rgba(255, 255, 255, 0.24);
     --cds-shadow-idle: 
       0 1px 3px 0 rgba(0, 0, 0, 0.35);
@@ -129,9 +129,10 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-synthesis: none;
-  text-autospace: normal;
+  text-autospace: normal; /* 中英數連寫自動產生光學呼吸間距 */
 }
 
+/* 套用動態逆補償字重 */
 .site-head h1,
 .date-group h2,
 .report-card h3,
@@ -157,6 +158,7 @@ thead th,
   font-weight: var(--cds-fw-bold);
 }
 
+/* 全面鎖定股票代碼、日期、季度、計數器與表格數字為等寬對齊 (Tabular Nums) */
 .ticker,
 .side-report-link strong,
 .side-report-group h2,
@@ -184,6 +186,7 @@ thead th,
   font-feature-settings: "tnum" 1, "zero" 1;
 }
 
+/* 標題與長文孤字消除 (Optical Wrapping) */
 .report-card h3,
 .report-head h1,
 .hero-verdict strong {
@@ -196,6 +199,7 @@ thead th,
   text-wrap: pretty;
 }
 
+/* 行內圖標光學垂直居中 */
 .prose svg,
 .card-footer svg,
 .side-search svg {
@@ -212,6 +216,7 @@ thead th,
   scrollbar-color: var(--card-line) transparent;
 }
 
+/* 搜尋框：髮絲邊框與 Focus 雙環品牌色微光 */
 .side-search {
   border: 0;
   border-radius: var(--cds-radius-control);
@@ -224,6 +229,7 @@ thead th,
   box-shadow: 0 0 0 1.5px var(--accent), 0 0 0 4px var(--accent-glow);
 }
 
+/* Kbd 快捷鍵：物理鍵帽立體感 */
 .side-search kbd {
   padding: 0.1rem 0.38rem;
   border-radius: 4px;
@@ -232,6 +238,7 @@ thead th,
   font-weight: var(--cds-fw-semibold);
 }
 
+/* 篩選器列與報告連結：120ms 幾何咬合 + 70ms 觸覺按壓物理 */
 .filter-row,
 .side-report-link {
   border-radius: 0 var(--cds-radius-pill) var(--cds-radius-pill) 0;
@@ -254,6 +261,7 @@ thead th,
   transition: transform var(--cds-dur-tactile) var(--cds-ease-out), opacity var(--cds-dur-snap) var(--cds-ease-out);
 }
 
+/* [3] Open-Claude-UI 7 檔非線性 Alpha 滾動邊緣漸隱遮罩 */
 .toc {
   mask-image: linear-gradient(
     to bottom,
@@ -300,8 +308,7 @@ thead th,
     box-shadow var(--cds-dur-panel) var(--cds-ease-out);
 }
 
-.report-card:hover,
-.report-card:active {
+.report-card:hover {
   transform: translateY(-2.5px);
   box-shadow: var(--cds-shadow-elevated);
 }
@@ -314,6 +321,7 @@ thead th,
   line-height: 1.65;
 }
 
+/* 標籤膠囊 (Tags)：精密圓角與觸覺微震 */
 .tag,
 .tag-more {
   border-radius: var(--cds-radius-pill);
@@ -331,6 +339,7 @@ thead th,
   transform: scale(0.96);
 }
 
+/* 卡片底部操作連結 */
 .card-footer nav a {
   padding: 0.25rem 0.5rem;
   margin: -0.25rem -0.5rem;
@@ -406,6 +415,7 @@ tbody tr td {
   box-shadow: var(--cds-shadow-idle);
 }
 
+/* 搜尋高亮工具列 (Hit Toolbar)：macOS Vibrancy 毛玻璃懸浮膠囊 */
 .hit-toolbar {
   border: 0;
   border-radius: 999px;
@@ -414,15 +424,6 @@ tbody tr td {
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
   box-shadow: var(--cds-hairline-strong), 0 8px 20px -4px rgba(0, 0, 0, 0.12);
-}
-
-@media (max-width: 1023px) {
-  .mobile-bar {
-    background: color-mix(in srgb, var(--paper) 88%, transparent);
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
-    border-bottom: 0.5px solid var(--line);
-  }
 }
 
 @media (max-width: 600px) {
@@ -441,3 +442,7 @@ tbody tr td {
     transition: none;
   }
 }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
