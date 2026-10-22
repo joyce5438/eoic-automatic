@@ -189,7 +189,7 @@ table{border-top:2px solid var(--ink);border-bottom:1px solid var(--ink)}thead t
 .related-head {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
+  gap: 1rem;
   margin-bottom: 1.25rem;
 }
 .related-head h3 {
@@ -198,12 +198,13 @@ table{border-top:2px solid var(--ink);border-bottom:1px solid var(--ink)}thead t
   font-weight: var(--cds-fw-heavy);
   letter-spacing: -0.02em;
 }
-.related-head a {
-  font-size: 0.76rem;
+.related-head .related-all-link {
+  font-size: 0.78rem;
   color: var(--accent);
   text-decoration: none;
+  font-weight: 600;
 }
-.related-head a:hover {
+.related-head .related-all-link:hover {
   text-decoration: underline;
 }
 .related-grid {
@@ -282,8 +283,21 @@ table{border-top:2px solid var(--ink);border-bottom:1px solid var(--ink)}thead t
 .report-footer-nav {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  justify-content: center;
+  gap: 2rem; /* 寬裕舒適的間隔 */
   flex-wrap: wrap;
+}
+.report-footer-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.report-footer-nav a:hover {
+  color: var(--accent);
+  background: var(--tag-bg);
 }
 
 /* 4. 視圖切換器 (View Switcher) */
