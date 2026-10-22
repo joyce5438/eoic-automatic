@@ -176,9 +176,15 @@ table{border-top:2px solid var(--ink);border-bottom:1px solid var(--ink)}thead t
 
 /* 3. 同賽道推薦 (Related Reports) */
 .related-reports {
-  margin: 4rem 0 2rem;
-  padding-top: 2rem;
+  max-width: 54rem;
+  margin: 3.5rem auto 1.5rem;
+  padding: 2rem 2rem 0;
   border-top: 2px solid var(--ink);
+}
+@media(max-width:600px) {
+  .related-reports {
+    padding-inline: 1.25rem;
+  }
 }
 .related-head {
   display: flex;
@@ -202,7 +208,7 @@ table{border-top:2px solid var(--ink);border-bottom:1px solid var(--ink)}thead t
 }
 .related-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 1rem;
 }
 .related-card {
@@ -258,6 +264,26 @@ table{border-top:2px solid var(--ink);border-bottom:1px solid var(--ink)}thead t
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
+}
+
+/* 報告頁頁尾導航彈性適配 */
+.report-footer {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  max-width: 54rem;
+  margin: auto;
+  padding: 1.5rem 2rem 3rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.8rem;
+}
+.report-footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
 /* 4. 視圖切換器 (View Switcher) */

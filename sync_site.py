@@ -247,8 +247,6 @@ def build_sidebar(
             )
         side_groups.append(f'<section class="side-report-group" data-side-date="{esc(d)}"><h2>{esc(d)}</h2>{"".join(links)}</section>')
 
-    feed_href = "../feed.xml" if is_report_page else "feed.xml"
-
     return (
         f'<aside id="site-sidebar" class="site-sidebar">'
         f'<button class="drawer-close" type="button" data-drawer-close aria-label="關閉清單">關閉</button>'
@@ -259,9 +257,6 @@ def build_sidebar(
         f'<div id="active-tags" class="active-tags"></div>'
         f'<div class="results"><strong id="result-count" aria-live="polite">找到 {total} 份</strong><button id="clear-all" hidden>清除條件</button></div>'
         f'</section>'
-        f'<div style="padding:0.4rem 0.5rem 0.8rem;border-top:1px solid var(--line);font-size:0.75rem;">'
-        f'<a href="{feed_href}" target="_blank" style="display:inline-flex;align-items:center;gap:0.35rem;color:var(--muted);text-decoration:none;">'
-        f'<span>📡</span> 訂閱 RSS Feed</a></div>'
         f'<nav class="side-report-list" aria-label="報告清單">{"".join(side_groups)}</nav>'
         f'</aside>'
     )
@@ -464,7 +459,7 @@ def build_index_html(
         f'<div id="report-list">{"".join(date_sections)}</div>\n'
         f'{matrix_html}\n'
         f'<section id="empty" class="empty" hidden><h2>沒有符合的報告</h2><button>清除條件</button></section></main>\n'
-        f'<footer class="site-footer">公開閱讀 · 內容與數字依各份原稿原樣呈現</footer></div>\n'
+        f'<footer class="site-footer"><span>公開閱讀 · 內容與數字依各份原稿原樣呈現</span> · <a href="feed.xml" target="_blank" style="color:var(--accent);text-decoration:none;">📡 訂閱 RSS Feed</a></footer></div>\n'
         f'<script src="assets/search-index.js" defer></script>\n'
         f'<script src="assets/site.js" defer></script></body></html>'
     )
@@ -588,8 +583,11 @@ def update_report_html(
     new_footer = (
         f'<footer class="report-footer">'
         f'{prev_link}'
+        f'<div class="report-footer-nav">'
         f'<a href="../index.html">回首頁</a>'
+        f'<a href="../feed.xml" target="_blank" style="display:inline-flex;align-items:center;gap:0.25rem;">📡 訂閱 RSS</a>'
         f'<a href="../{esc(r["source_rel"])}" download>下載完整分析稿</a>'
+        f'</div>'
         f'{next_link}'
         f'</footer>'
     )
