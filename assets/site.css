@@ -92,3 +92,338 @@ table{border-top:2px solid var(--ink);border-bottom:1px solid var(--ink)}thead t
 .am-tree{margin:1.5rem 0;padding:1rem;border:1px solid var(--line);border-radius:10px;background:var(--paper);font-size:13px}.am-tree-root{display:flex;justify-content:center;position:relative;padding-bottom:18px}.am-tree-root::after{content:"";position:absolute;bottom:0;left:50%;height:18px;border-left:1.5px solid var(--ink)}.am-tree-root--solo{padding-bottom:12px}.am-tree-root--solo::after{display:none}.am-tree-box{border:1.5px solid var(--ink);border-radius:6px;background:var(--paper);padding:6px 14px;text-align:center;font-weight:700;color:var(--ink)}.am-tree-box small{display:block;font-weight:400;color:var(--muted);font-size:12px}.am-tree-box--root,.am-tree-box--hi{border-color:var(--accent);color:var(--accent)}.am-tree-box--root{background:var(--monetized-bg);font-size:15px;padding:8px 28px}.am-tree-cols{display:grid;grid-template-columns:repeat(var(--n,1),minmax(0,1fr))}.am-tree-col{position:relative;padding:18px 8px 0;min-width:0}.am-tree-col::before{content:"";position:absolute;top:0;left:0;right:0;border-top:1.5px solid var(--ink)}.am-tree-col:first-child::before{inset-inline-start:50%}.am-tree-col:last-child::before{inset-inline-end:50%}.am-tree-col::after{content:"";position:absolute;top:0;left:50%;height:18px;border-left:1.5px solid var(--ink)}.am-tree-list{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}.am-tree-list li{border:1px solid var(--line);border-radius:4px;background:var(--tag-bg);padding:5px 8px;font-size:12px}
 .am-annot{margin:1.5rem 0;padding:1rem 1.2rem;border:1px solid var(--line);border-radius:10px;background:var(--paper)}.am-code{margin:1.5rem 0;border:1px solid var(--line);border-radius:10px;background:var(--tag-bg);overflow-x:auto}
 
+
+/* --- EOIC 6大功能升級樣式 --- */
+
+/* 1. 麵包屑導航 (Breadcrumb) */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.76rem;
+  color: var(--weak);
+  margin-bottom: 0.85rem;
+  flex-wrap: wrap;
+}
+.breadcrumb a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.breadcrumb a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.breadcrumb-sep {
+  color: var(--card-line);
+  font-size: 0.7rem;
+}
+.breadcrumb-current {
+  color: var(--ink);
+  font-weight: 700;
+  font-family: ui-monospace, Consolas, monospace;
+}
+
+/* 2. 數據表格一鍵複製 / 匯出工具列 (Table Tools) */
+.table-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.5rem 0 0.4rem;
+  padding: 0.45rem 0.6rem;
+  background: var(--tag-bg);
+  border: 1px solid var(--line);
+  border-bottom: 0;
+  border-radius: 6px 6px 0 0;
+}
+.table-scroll .table-tools + table {
+  margin-top: 0;
+}
+.table-tools-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.table-tools-btns {
+  display: flex;
+  gap: 0.4rem;
+}
+.btn-table-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.22rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.btn-table-action:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--bg);
+}
+.btn-table-action.copied {
+  background: var(--monetized-bg);
+  color: var(--monetized-ink);
+  border-color: var(--monetized-ink);
+}
+
+/* 3. 同賽道推薦 (Related Reports) */
+.related-reports {
+  margin: 4rem 0 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--ink);
+}
+.related-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+.related-head h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: var(--cds-fw-heavy);
+  letter-spacing: -0.02em;
+}
+.related-head a {
+  font-size: 0.76rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+.related-head a:hover {
+  text-decoration: underline;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+}
+.related-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.1rem;
+  background: var(--paper);
+  border: 1px solid var(--card-line);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.related-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px -3px rgba(0,0,0,0.06);
+}
+.related-card-top {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.related-card-top strong {
+  font-size: 1.2rem;
+  font-weight: 800;
+  font-family: ui-monospace, Consolas, monospace;
+  color: var(--ink);
+}
+.related-card-top span.related-comp {
+  font-size: 0.75rem;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+.related-card-top .tag-dir {
+  font-size: 0.65rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  background: var(--tag-bg);
+  color: var(--tag-ink);
+  font-weight: 600;
+}
+.related-card-verdict {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--muted);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/* 4. 視圖切換器 (View Switcher) */
+.view-switch {
+  display: flex;
+  gap: 0.4rem;
+  width: min(80rem, calc(100% - 3rem));
+  margin: 1.5rem auto 0;
+}
+@media(max-width:1023px) {
+  .view-switch { width: min(100% - 2rem, 80rem); }
+}
+.view-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.95rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--muted);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.view-tab:hover {
+  border-color: var(--accent);
+  color: var(--ink);
+}
+.view-tab.active {
+  background: var(--accent);
+  color: var(--selected-ink);
+  border-color: var(--accent);
+}
+
+/* 5. EOIC 週期全景矩陣 (Matrix View) */
+.matrix-view {
+  padding-bottom: 5rem;
+  margin-top: 2rem;
+}
+.matrix-intro {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--paper);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.matrix-intro strong {
+  color: var(--ink);
+}
+.matrix-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+@media(max-width:900px) {
+  .matrix-columns { grid-template-columns: 1fr; }
+}
+.matrix-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.matrix-col-header {
+  padding: 0.8rem 1rem;
+  border-bottom: 3px solid var(--ink);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.matrix-col-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: var(--cds-fw-heavy);
+  letter-spacing: -0.02em;
+}
+.matrix-col-header.col-monetized {
+  border-bottom-color: var(--monetized-ink);
+}
+.matrix-col-header.col-monetized h3 {
+  color: var(--monetized-ink);
+}
+.matrix-col-header.col-unmonetized {
+  border-bottom-color: var(--unmonetized-ink);
+}
+.matrix-col-header.col-unmonetized h3 {
+  color: var(--unmonetized-ink);
+}
+.matrix-col-header span {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.matrix-quadrant {
+  background: var(--paper);
+  border: 1px solid var(--card-line);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.quadrant-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--line);
+  padding-bottom: 0.45rem;
+}
+.quadrant-title h4 {
+  margin: 0;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.quadrant-title span.q-count {
+  font-size: 0.7rem;
+  font-family: ui-monospace, Consolas, monospace;
+  color: var(--weak);
+}
+.quadrant-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.matrix-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  padding: 0.3rem 0.55rem;
+  background: var(--tag-bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.75rem;
+  transition: all 0.15s ease;
+}
+.matrix-pill:hover {
+  border-color: var(--accent);
+  background: var(--paper);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px -2px rgba(0,0,0,0.06);
+}
+.matrix-pill strong {
+  font-family: ui-monospace, Consolas, monospace;
+  font-weight: 750;
+  font-size: 0.82rem;
+}
+.matrix-pill span.m-comp {
+  color: var(--muted);
+  font-size: 0.68rem;
+  max-width: 6.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.matrix-pill.is-dimmed {
+  opacity: 0.15;
+  filter: grayscale(1);
+  pointer-events: none;
+}

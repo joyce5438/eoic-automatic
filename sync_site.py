@@ -3,8 +3,9 @@
 Synchronize EOIC site files whenever new reports/{TICKER}.html and sources/{TICKER}_EOIC_{DATE}.md are added.
 Automatically updates:
 1. assets/search-index.js (window.EOIC_INDEX)
-2. index.html (sidebar, filter counts, date groups, report cards)
-3. reports/*.html (sidebar, filter counts, and prev/next footer links)
+2. feed.xml (RSS 2.0 feed)
+3. index.html (sidebar, filter counts, date groups, report cards, and EOIC matrix view)
+4. reports/*.html (sidebar, filter counts, breadcrumbs, related reports, OG tags, and prev/next footer links)
 """
 from __future__ import annotations
 
@@ -12,10 +13,12 @@ import html as h
 import json
 import re
 from collections import defaultdict
+from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import quote
 
 SITE_DIR = Path(__file__).resolve().parent
+BASE_URL = "https://joyce5438.github.io/eoic-automatic"
 
 TAG_GROUPS_ORDER = [
     ("變現狀態", ["已變現", "未變現"], True),
@@ -24,6 +27,8 @@ TAG_GROUPS_ORDER = [
     ("創新主軸", ["人工智慧", "平台訂閱", "新產品", "自動化效率", "資料中心"], False),
     ("風險提醒", ["一次性收益", "仍在虧損", "併購干擾", "毛利下滑", "現金未跟上", "看外部環境"], False),
 ]
+
+DIRECTIONS_ORDER = ["加速", "擴張", "修復", "減速"]
 
 
 def esc(text: str) -> str:
@@ -242,6 +247,8 @@ def build_sidebar(
             )
         side_groups.append(f'<section class="side-report-group" data-side-date="{esc(d)}"><h2>{esc(d)}</h2>{"".join(links)}</section>')
 
+    feed_href = "../feed.xml" if is_report_page else "feed.xml"
+
     return (
         f'<aside id="site-sidebar" class="site-sidebar">'
         f'<button class="drawer-close" type="button" data-drawer-close aria-label="關閉清單">關閉</button>'
@@ -252,6 +259,9 @@ def build_sidebar(
         f'<div id="active-tags" class="active-tags"></div>'
         f'<div class="results"><strong id="result-count" aria-live="polite">找到 {total} 份</strong><button id="clear-all" hidden>清除條件</button></div>'
         f'</section>'
+        f'<div style="padding:0.4rem 0.5rem 0.8rem;border-top:1px solid var(--line);font-size:0.75rem;">'
+        f'<a href="{feed_href}" target="_blank" style="display:inline-flex;align-items:center;gap:0.35rem;color:var(--muted);text-decoration:none;">'
+        f'<span>📡</span> 訂閱 RSS Feed</a></div>'
         f'<nav class="side-report-list" aria-label="報告清單">{"".join(side_groups)}</nav>'
         f'</aside>'
     )
@@ -292,6 +302,113 @@ def build_card(r: dict) -> str:
     )
 
 
+def build_matrix_html(reports: list[dict]) -> str:
+    """Build the EOIC 2x2 / 4x2 Operating & Innovation Cycle Matrix View."""
+    # Group reports by (status, direction)
+    matrix_data: dict[tuple[str, str], list[dict]] = defaultdict(list)
+    for r in reports:
+        status = r["tag_groups"].get("變現狀態", ["已變現"])[0]
+        direction = r["tag_groups"].get("營運方向", ["修復"])[0]
+        matrix_data[(status, direction)].append(r)
+
+    def render_col(status_key: str, col_title: str, col_desc: str, col_cls: str) -> str:
+        col_total = sum(len(matrix_data.get((status_key, d), [])) for d in DIRECTIONS_ORDER)
+        quadrants = []
+        for direction in DIRECTIONS_ORDER:
+            items = matrix_data.get((status_key, direction), [])
+            # Sort items alphabetically by ticker
+            items_sorted = sorted(items, key=lambda x: x["code"])
+            pills = []
+            for item in items_sorted:
+                tag_groups_json = json.dumps(item["tag_groups"], ensure_ascii=False, separators=(",", ":"))
+                search_tokens = " ".join([
+                    item["code"].lower(),
+                    item["company"].lower(),
+                    item["verdict"].lower(),
+                    " ".join(t[0].lower() for t in item["tags"]),
+                ])
+                pills.append(
+                    f'<a class="matrix-pill" href="reports/{esc(item["code"])}.html" '
+                    f'data-code="{esc(item["code"])}" data-date="{esc(item["date"])}" '
+                    f'data-tag-groups="{esc(tag_groups_json)}" data-search="{esc(search_tokens)}" '
+                    f'title="{esc(item["company"])}｜{esc(item["verdict"])}">'
+                    f'<strong>{esc(item["code"])}</strong>'
+                    f'<span class="m-comp">{esc(item["company"])}</span>'
+                    f'</a>'
+                )
+            pills_html = "".join(pills) if pills else '<span style="font-size:0.75rem;color:var(--weak);padding:0.4rem 0;">無標的</span>'
+            quadrants.append(
+                f'<div class="matrix-quadrant" data-status="{esc(status_key)}" data-direction="{esc(direction)}">'
+                f'<div class="quadrant-title"><h4>{esc(direction)}</h4><span class="q-count">{len(items)} 份</span></div>'
+                f'<div class="quadrant-pills">{pills_html}</div>'
+                f'</div>'
+            )
+        return (
+            f'<div class="matrix-column">'
+            f'<header class="matrix-col-header {col_cls}">'
+            f'<div><h3>{esc(col_title)}</h3><span style="font-size:0.75rem;color:var(--muted);">{esc(col_desc)}</span></div>'
+            f'<span>{col_total} 份</span>'
+            f'</header>'
+            f'{"".join(quadrants)}'
+            f'</div>'
+        )
+
+    col1 = render_col("已變現", "已變現（Monetized）", "創新已實質傳導至營收與利潤", "col-monetized")
+    col2 = render_col("未變現", "未變現（Unmonetized）", "創新仍在研發投入或採用遲滯期", "col-unmonetized")
+
+    return (
+        f'<div id="matrix-view" class="matrix-view" hidden>'
+        f'<div class="matrix-intro">'
+        f'<div><strong>🧭 EOIC 營運與創新週期全景圖</strong>'
+        f'<div style="margin-top:0.25rem;">橫軸檢視創新是否變現，縱軸檢視營運加速度；點選左側搜尋或標籤可同步動態高亮。</div></div>'
+        f'<span style="font-size:0.75rem;color:var(--weak);">共 {len(reports)} 家公司</span>'
+        f'</div>'
+        f'<div class="matrix-columns">{col1}{col2}</div>'
+        f'</div>'
+    )
+
+
+def build_feed_xml(reports: list[dict]) -> str:
+    """Generate RSS 2.0 Feed for new reports."""
+    items = []
+    # Latest 35 reports
+    for r in reports[:35]:
+        link = f"{BASE_URL}/reports/{esc(r['code'])}.html"
+        title = f"{esc(r['code'])}｜{esc(r['company'])} EOIC 報告"
+        try:
+            dt = datetime.strptime(r["date"], "%Y-%m-%d").replace(tzinfo=timezone.utc)
+            pub_date = dt.strftime("%a, %d %b %Y 00:00:00 +0000")
+        except Exception:
+            pub_date = r["date"]
+        desc = (
+            f"【{esc(r['company'])} ({esc(r['code'])})】主要判斷：{esc(r['verdict'])}。"
+            f"關鍵結論：{esc(r['subtitle'])}"
+        )
+        items.append(
+            f"    <item>\n"
+            f"      <title>{title}</title>\n"
+            f"      <link>{link}</link>\n"
+            f"      <guid isPermaLink=\"true\">{link}</guid>\n"
+            f"      <pubDate>{pub_date}</pubDate>\n"
+            f"      <description>{desc}</description>\n"
+            f"    </item>"
+        )
+    items_str = "\n".join(items)
+    return (
+        f'<?xml version="1.0" encoding="UTF-8"?>\n'
+        f'<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n'
+        f'  <channel>\n'
+        f'    <title>EOIC automatic — 企業營運與創新週期分析</title>\n'
+        f'    <link>{BASE_URL}/index.html</link>\n'
+        f'    <atom:link href="{BASE_URL}/feed.xml" rel="self" type="application/rss+xml"/>\n'
+        f'    <description>EOIC 企業營運與創新週期分析報告更新訂閱</description>\n'
+        f'    <language>zh-Hant</language>\n'
+        f'{items_str}\n'
+        f'  </channel>\n'
+        f'</rss>\n'
+    )
+
+
 def build_index_html(
     reports: list[dict],
     dates_ordered: list[str],
@@ -311,25 +428,174 @@ def build_index_html(
             f'</section>'
         )
 
+    matrix_html = build_matrix_html(reports)
+
+    og_tags = (
+        f'<meta property="og:type" content="website">\n'
+        f'<meta property="og:title" content="EOIC automatic — 企業營運與創新週期分析報告">\n'
+        f'<meta property="og:description" content="搜尋 {total} 份企業營運與創新週期報告，快速掌握主要判斷與關鍵財務數字。">\n'
+        f'<meta property="og:url" content="{BASE_URL}/index.html">\n'
+        f'<meta property="og:site_name" content="EOIC automatic">\n'
+        f'<meta name="twitter:card" content="summary">\n'
+        f'<meta name="twitter:title" content="EOIC automatic — 企業營運與創新週期分析">\n'
+        f'<meta name="twitter:description" content="搜尋 {total} 份企業營運與創新週期報告，快速掌握主要判斷與關鍵財務數字。">\n'
+        f'<link rel="alternate" type="application/rss+xml" title="EOIC automatic RSS Feed" href="feed.xml">'
+    )
+
     return (
-        f'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">'
-        f'<meta name="viewport" content="width=device-width,initial-scale=1">'
-        f'<meta name="description" content="EOIC 企業營運與創新週期分析報告">'
-        f'<title>EOIC automatic</title><link rel="stylesheet" href="assets/site.css"></head>'
-        f'<body><a class="skip" href="#main">跳至內容</a>'
-        f'<button class="mobile-bar" type="button" data-drawer-open aria-expanded="false" aria-controls="site-sidebar">'
-        f'<strong>EOIC automatic</strong><span>清單</span></button>'
-        f'<div class="drawer-mask" data-drawer-close hidden></div>'
-        f'{sidebar_html}'
-        f'<div class="page-content">'
-        f'<header class="site-head"><h1><a href="index.html">EOIC automatic</a></h1>'
-        f'<p>搜尋 {total} 份企業營運與創新週期報告，快速掌握主要判斷與關鍵數字。</p></header>'
-        f'<main id="main" class="index-main"><div id="report-list">{"".join(date_sections)}</div>'
-        f'<section id="empty" class="empty" hidden><h2>沒有符合的報告</h2><button>清除條件</button></section></main>'
-        f'<footer class="site-footer">公開閱讀 · 內容與數字依各份原稿原樣呈現</footer></div>'
-        f'<script src="assets/search-index.js" defer></script>'
+        f'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">\n'
+        f'<meta name="viewport" content="width=device-width,initial-scale=1">\n'
+        f'<meta name="description" content="EOIC 企業營運與創新週期分析報告">\n'
+        f'{og_tags}\n'
+        f'<title>EOIC automatic</title><link rel="stylesheet" href="assets/site.css"></head>\n'
+        f'<body><a class="skip" href="#main">跳至內容</a>\n'
+        f'<button class="mobile-bar" type="button" data-drawer-open aria-expanded="false" aria-controls="site-sidebar">\n'
+        f'<strong>EOIC automatic</strong><span>清單</span></button>\n'
+        f'<div class="drawer-mask" data-drawer-close hidden></div>\n'
+        f'{sidebar_html}\n'
+        f'<div class="page-content">\n'
+        f'<header class="site-head"><h1><a href="index.html">EOIC automatic</a></h1>\n'
+        f'<p>搜尋 {total} 份企業營運與創新週期報告，快速掌握主要判斷與關鍵數字。</p></header>\n'
+        f'<div class="view-switch" role="tablist" aria-label="檢視切換">\n'
+        f'<button type="button" class="view-tab active" data-view="timeline" role="tab" aria-selected="true"><span>⏱️ 時間軸清單</span></button>\n'
+        f'<button type="button" class="view-tab" data-view="matrix" role="tab" aria-selected="false"><span>🧭 週期全景矩陣</span></button>\n'
+        f'</div>\n'
+        f'<main id="main" class="index-main">\n'
+        f'<div id="report-list">{"".join(date_sections)}</div>\n'
+        f'{matrix_html}\n'
+        f'<section id="empty" class="empty" hidden><h2>沒有符合的報告</h2><button>清除條件</button></section></main>\n'
+        f'<footer class="site-footer">公開閱讀 · 內容與數字依各份原稿原樣呈現</footer></div>\n'
+        f'<script src="assets/search-index.js" defer></script>\n'
         f'<script src="assets/site.js" defer></script></body></html>'
     )
+
+
+def build_breadcrumb_html(r: dict) -> str:
+    industry = r["tag_groups"].get("產業", ["全部報告"])[0] if r["tag_groups"].get("產業") else "全部報告"
+    return (
+        f'<nav class="breadcrumb" aria-label="導航路徑">'
+        f'<a href="../index.html">首頁</a>'
+        f'<span class="breadcrumb-sep">/</span>'
+        f'<a href="../index.html#tag={quote(industry)}">{esc(industry)}</a>'
+        f'<span class="breadcrumb-sep">/</span>'
+        f'<span class="breadcrumb-current">{esc(r["code"])}</span>'
+        f'</nav>'
+    )
+
+
+def build_related_html(r: dict, all_reports: list[dict]) -> str:
+    """Find 2-3 peer reports in the same industry or direction."""
+    industry = r["tag_groups"].get("產業", [""])[0] if r["tag_groups"].get("產業") else ""
+    peers: list[dict] = []
+    if industry:
+        peers = [p for p in all_reports if p["code"] != r["code"] and industry in p["tag_groups"].get("產業", [])]
+
+    # If fewer than 2 peers in the same industry, supplement with same direction
+    if len(peers) < 2:
+        direction = r["tag_groups"].get("營運方向", [""])[0] if r["tag_groups"].get("營運方向") else ""
+        if direction:
+            peers += [p for p in all_reports if p["code"] != r["code"] and p not in peers and direction in p["tag_groups"].get("營運方向", [])]
+
+    selected_peers = peers[:3]
+    if not selected_peers:
+        return ""
+
+    cards = []
+    for peer in selected_peers:
+        peer_dir = peer["tag_groups"].get("營運方向", [""])[0] if peer["tag_groups"].get("營運方向") else ""
+        cards.append(
+            f'<a class="related-card" href="{esc(peer["code"])}.html">'
+            f'<div class="related-card-top">'
+            f'<strong>{esc(peer["code"])}</strong>'
+            f'<span class="related-comp">{esc(peer["company"])}</span>'
+            f'<span class="tag-dir">{esc(peer_dir)}</span>'
+            f'</div>'
+            f'<p class="related-card-verdict">{esc(peer["verdict"])}</p>'
+            f'</a>'
+        )
+
+    ind_label = f" · {esc(industry)}" if industry else ""
+    tag_href = f'../index.html#tag={quote(industry)}' if industry else '../index.html'
+
+    return (
+        f'<section class="related-reports" aria-label="同賽道推薦">\n'
+        f'<div class="related-head">\n'
+        f'<h3>同賽道其他報告{ind_label}</h3>\n'
+        f'<a href="{tag_href}">查看全部 →</a>\n'
+        f'</div>\n'
+        f'<div class="related-grid">{"".join(cards)}</div>\n'
+        f'</section>\n'
+    )
+
+
+def update_report_html(
+    rep_html: str,
+    r: dict,
+    all_reports: list[dict],
+    prev_r: dict | None,
+    next_r: dict | None,
+    new_sidebar: str,
+) -> str:
+    """Inject Open Graph meta tags, breadcrumb, related reports, sidebar, and footer."""
+    code = r["code"]
+    company = r["company"]
+    verdict = r["verdict"]
+    subtitle = r["subtitle"]
+
+    # 1. Inject or update Open Graph / RSS in <head>
+    og_meta = (
+        f'<meta property="og:type" content="article">\n'
+        f'<meta property="og:title" content="{esc(code)}｜{esc(company)} — 企業營運與創新週期 (EOIC)">\n'
+        f'<meta property="og:description" content="{esc(verdict)}：{esc(subtitle)}">\n'
+        f'<meta property="og:url" content="{BASE_URL}/reports/{esc(code)}.html">\n'
+        f'<meta property="og:site_name" content="EOIC automatic">\n'
+        f'<meta name="twitter:card" content="summary">\n'
+        f'<meta name="twitter:title" content="{esc(code)}｜{esc(company)} — EOIC 報告">\n'
+        f'<meta name="twitter:description" content="{esc(verdict)}">\n'
+        f'<link rel="alternate" type="application/rss+xml" title="EOIC automatic RSS Feed" href="../feed.xml">\n'
+        f'<link rel="stylesheet" href="../assets/site.css">'
+    )
+
+    # Clean existing og/twitter/rss/site.css if present
+    rep_html = re.sub(r'<meta property="og:[^>]+>\n?', '', rep_html)
+    rep_html = re.sub(r'<meta name="twitter:[^>]+>\n?', '', rep_html)
+    rep_html = re.sub(r'<link rel="alternate"[^>]+>\n?', '', rep_html)
+    rep_html = re.sub(r'<link rel="stylesheet" href="\.\./assets/site\.css">\n?', '', rep_html)
+
+    # Insert after <title>
+    rep_html = re.sub(r'(<title>.*?</title>)', r'\1\n' + og_meta, rep_html, count=1)
+
+    # 2. Update sidebar
+    rep_html = re.sub(r'<aside id="site-sidebar" class="site-sidebar">.*?</aside>', lambda _: new_sidebar, rep_html, count=1, flags=re.S)
+
+    # 3. Inject Breadcrumb before <div class="eyebrow">
+    breadcrumb_html = build_breadcrumb_html(r)
+    if '<nav class="breadcrumb"' in rep_html:
+        rep_html = re.sub(r'<nav class="breadcrumb"[^>]*>.*?</nav>', lambda _: breadcrumb_html, rep_html, count=1, flags=re.S)
+    else:
+        rep_html = re.sub(r'(<header class="report-head">)', r'\1' + breadcrumb_html, rep_html, count=1)
+
+    # 4. Inject Related Reports before <footer class="report-footer">
+    related_html = build_related_html(r, all_reports)
+    if '<section class="related-reports"' in rep_html:
+        rep_html = re.sub(r'<section class="related-reports"[^>]*>.*?</section>\n?', lambda _: related_html, rep_html, count=1, flags=re.S)
+    else:
+        rep_html = re.sub(r'(<footer class="report-footer">)', lambda m: related_html + m.group(1), rep_html, count=1)
+
+    # 5. Update footer
+    prev_link = f'<a href="{esc(prev_r["code"])}.html">← {esc(prev_r["code"])}</a>' if prev_r else "<span></span>"
+    next_link = f'<a href="{esc(next_r["code"])}.html">{esc(next_r["code"])} →</a>' if next_r else "<span></span>"
+    new_footer = (
+        f'<footer class="report-footer">'
+        f'{prev_link}'
+        f'<a href="../index.html">回首頁</a>'
+        f'<a href="../{esc(r["source_rel"])}" download>下載完整分析稿</a>'
+        f'{next_link}'
+        f'</footer>'
+    )
+    rep_html = re.sub(r'<footer class="report-footer">.*?</footer>', lambda _: new_footer, rep_html, count=1, flags=re.S)
+
+    return rep_html
 
 
 def main() -> None:
@@ -366,32 +632,27 @@ def main() -> None:
     search_index_str = "window.EOIC_INDEX = " + json.dumps(search_index_data, ensure_ascii=False, separators=(",", ":")) + ";\n"
     (SITE_DIR / "assets" / "search-index.js").write_text(search_index_str, encoding="utf-8")
 
-    # 2. Update index.html
+    # 2. Update feed.xml (RSS 2.0)
+    feed_xml_content = build_feed_xml(parsed)
+    (SITE_DIR / "feed.xml").write_text(feed_xml_content, encoding="utf-8")
+
+    # 3. Update index.html
     new_index_html = build_index_html(parsed, dates_ordered, by_date, tag_counts)
     index_path.write_text(new_index_html, encoding="utf-8")
 
-    # 3. Update sidebar and footer in each reports/*.html
+    # 4. Update each reports/*.html
     for i, r in enumerate(parsed):
         rep_path = r["path"]
         rep_html = rep_path.read_text(encoding="utf-8")
 
         new_sidebar = build_sidebar(parsed, dates_ordered, by_date, tag_counts, is_report_page=True, current_code=r["code"])
-        rep_html = re.sub(r'<aside id="site-sidebar" class="site-sidebar">.*?</aside>', lambda _: new_sidebar, rep_html, count=1, flags=re.S)
+        prev_r = parsed[i - 1] if i > 0 else None
+        next_r = parsed[i + 1] if i + 1 < len(parsed) else None
 
-        prev_link = f'<a href="{esc(parsed[i - 1]["code"])}.html">← {esc(parsed[i - 1]["code"])}</a>' if i > 0 else "<span></span>"
-        next_link = f'<a href="{esc(parsed[i + 1]["code"])}.html">{esc(parsed[i + 1]["code"])} →</a>' if i + 1 < len(parsed) else "<span></span>"
-        new_footer = (
-            f'<footer class="report-footer">'
-            f'{prev_link}'
-            f'<a href="../index.html">回首頁</a>'
-            f'<a href="../{esc(r["source_rel"])}" download>下載完整分析稿</a>'
-            f'{next_link}'
-            f'</footer>'
-        )
-        rep_html = re.sub(r'<footer class="report-footer">.*?</footer>', lambda _: new_footer, rep_html, count=1, flags=re.S)
-        rep_path.write_text(rep_html, encoding="utf-8")
+        updated_html = update_report_html(rep_html, r, parsed, prev_r, next_r, new_sidebar)
+        rep_path.write_text(updated_html, encoding="utf-8")
 
-    print(f"Synced {len(parsed)} reports across index.html, assets/search-index.js, and reports/*.html.")
+    print(f"Synced {len(parsed)} reports across index.html, feed.xml, assets/search-index.js, and reports/*.html.")
 
 
 if __name__ == "__main__":
