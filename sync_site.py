@@ -322,7 +322,7 @@ def build_index_html(
         f'<div class="drawer-mask" data-drawer-close hidden></div>'
         f'{sidebar_html}'
         f'<div class="page-content">'
-        f'<header class="site-head"><h1>EOIC automatic</h1>'
+        f'<header class="site-head"><h1><a href="index.html">EOIC automatic</a></h1>'
         f'<p>搜尋 {total} 份企業營運與創新週期報告，快速掌握主要判斷與關鍵數字。</p></header>'
         f'<main id="main" class="index-main"><div id="report-list">{"".join(date_sections)}</div>'
         f'<section id="empty" class="empty" hidden><h2>沒有符合的報告</h2><button>清除條件</button></section></main>'
