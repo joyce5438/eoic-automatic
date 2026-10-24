@@ -556,8 +556,7 @@ def update_report_html(
         f'<meta name="twitter:card" content="summary">\n'
         f'<meta name="twitter:title" content="{esc(code)}｜{esc(company)} — EOIC 報告">\n'
         f'<meta name="twitter:description" content="{esc(verdict)}">\n'
-        f'<link rel="alternate" type="application/rss+xml" title="EOIC automatic RSS Feed" href="../feed.xml">\n'
-        f'<link rel="stylesheet" href="../assets/site.css">'
+        f'<link rel="alternate" type="application/rss+xml" title="EOIC automatic RSS Feed" href="../feed.xml">'
     )
 
     # Clean existing og/twitter/rss/site.css if present
@@ -568,6 +567,12 @@ def update_report_html(
 
     # Insert after <title>
     rep_html = re.sub(r'(<title>.*?</title>)', r'\1\n' + og_meta, rep_html, count=1)
+
+    # Load the shared theme after legacy embedded styles. Keep report content intact.
+    rep_html = re.sub(
+        r"</head>", '<link rel="stylesheet" href="../assets/site.css">\\n</head>',
+        rep_html, count=1, flags=re.I,
+    )
 
     # 2. Update sidebar
     rep_html = re.sub(r'<aside id="site-sidebar" class="site-sidebar">.*?</aside>', lambda _: new_sidebar, rep_html, count=1, flags=re.S)
