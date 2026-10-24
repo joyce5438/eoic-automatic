@@ -513,12 +513,12 @@ a { text-decoration-thickness: .07em; text-underline-offset: .24em; }
 .view-tab:hover { color: var(--accent); }
 /* Dates form a narrow index rail. Each report is an editorial row, not a card. */
 .date-group { display: grid; grid-template-columns: 7.5rem minmax(0,1fr); gap: 1.75rem; margin-top: 0; padding-block: 2.5rem 1rem; border-bottom: 1px solid var(--ink); }
-.date-group>header { display: block; align-self: start; border: 0; margin: 0; padding-top: .3rem; }
+.date-group>header { display: block; align-self: first baseline; border: 0; margin: 0; padding-top: 0; }
 .date-group h2 { margin: 0 0 .45rem; font-size: .85rem; font-weight: 650; letter-spacing: .01em; }
 .date-group>header span { font-size: .72rem; }
-.card-grid { display: block; }
+.card-grid { display: grid; grid-template-columns: minmax(0,1fr); gap: 0; align-self: first baseline; }
 .report-card {
-  display: grid; grid-template-columns: 6.5rem minmax(0,1fr); column-gap: 1.5rem;
+  display: grid; grid-template-columns: 6.5rem minmax(0,1fr); column-gap: 1.5rem; align-items: first baseline;
   grid-template-areas: "identity title" "identity verdict" "identity tags" "identity footer" "hits hits";
   padding: 0 0 2rem; border: 0; border-radius: 0; background: transparent;
   opacity: 1; transform: none; box-shadow: none;
@@ -526,16 +526,18 @@ a { text-decoration-thickness: .07em; text-underline-offset: .24em; }
 }
 .report-card+.report-card { border-top: 1px solid var(--line); padding-top: 2rem; }
 .report-card:hover { border-color: var(--line); box-shadow: none; transform: none; }
-.card-top { grid-area: identity; display: flex; flex-direction: column; gap: .7rem; min-width: 0; }
+.card-top { grid-area: identity; display: flex; flex-direction: column; gap: .7rem; min-width: 0; align-self: first baseline; }
 .ticker { font: 400 2.3rem/1 Georgia,"Times New Roman",serif; letter-spacing: -.035em; color: var(--accent); }
 .card-top span { font-size: .72rem; line-height: 1.6; white-space: normal; overflow-wrap: anywhere; }
 .report-card h3 { grid-area: title; display: block; margin: 0 0 .8rem; font-size: clamp(1.1rem,1.7vw,1.5rem); line-height: 1.6; letter-spacing: -.02em; }
 .verdict { grid-area: verdict; display: block; margin: 0 0 1rem; font-size: .9rem; line-height: 1.9; }
 .report-card .tag-row { grid-area: tags; margin-bottom: 1rem; }
-.card-footer { grid-area: footer; display: flex; align-items: baseline; flex-wrap: wrap; padding-top: .7rem; font-size: .74rem; border: 0; gap: .75rem; }
-.card-footer nav { margin-left: auto; }
+.card-footer { grid-area: footer; display: flex; align-items: center; flex-wrap: wrap; padding-top: .7rem; font-size: .74rem; border: 0; gap: .75rem; }
+.card-footer nav { margin-left: auto; align-items: center; }
+.card-footer>span { line-height: 1.6; }
+.card-footer nav a { display: inline-flex; align-items: center; min-height: 2.75rem; line-height: 1.6; }
 .card-footer .primary { display: inline-flex; align-items: center; gap: .5rem; }
-.card-footer .primary::after { content: "↗"; font-size: 1.1rem; }
+.card-footer .primary::after { content: "↗"; font-size: 1.1rem; line-height: 1; }
 .search-hits { grid-area: hits; }
 .tag,.tag-more { border-radius: 0; font-size: .7rem; }
 /* Report cover: a dark title field, an independent thesis column and a data baseline. */
@@ -638,7 +640,7 @@ a { text-decoration-thickness: .07em; text-underline-offset: .24em; }
   .date-group { display: block; padding-top: 2rem; }
   .date-group>header { display: flex; justify-content: space-between; margin-bottom: 1.4rem; }
   .report-card { grid-template-columns: minmax(0,1fr); grid-template-areas: "identity" "title" "verdict" "tags" "footer" "hits"; }
-  .card-top { flex-direction: row; align-items: baseline; gap: 1rem; margin-bottom: 1rem; }
+  .card-top { flex-direction: row; align-self: start; align-items: baseline; gap: 1rem; margin-bottom: 1rem; }
   .ticker { font-size: 2.5rem; }
   .report-card h3 { font-size: 1.15rem; }
   .card-footer { display: block; }
