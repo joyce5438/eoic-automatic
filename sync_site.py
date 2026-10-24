@@ -449,11 +449,12 @@ def build_index_html(
         f'<div class="drawer-mask" data-drawer-close hidden></div>\n'
         f'{sidebar_html}\n'
         f'<div class="page-content">\n'
-        f'<header class="site-head"><h1><a href="index.html">EOIC automatic</a></h1>\n'
-        f'<p>搜尋 {total} 份企業營運與創新週期報告，快速掌握主要判斷與關鍵數字。</p></header>\n'
+        f'<header class="site-head"><h1><a href="index.html"><span class="masthead-name">EOIC</span> <span class="masthead-edition">automatic</span></a></h1>\n'
+        f'<p>企業營運與創新週期分析<br>從營運訊號，讀懂企業的下一步。</p>'
+        f'<div class="edition-meta"><span>研究報告庫 · {total} 份報告</span><span>最新更新 {esc(dates_ordered[0]) if dates_ordered else "—"}</span></div></header>\n'
         f'<div class="view-switch" role="tablist" aria-label="檢視切換">\n'
-        f'<button type="button" class="view-tab active" data-view="timeline" role="tab" aria-selected="true"><span>⏱️ 時間軸清單</span></button>\n'
-        f'<button type="button" class="view-tab" data-view="matrix" role="tab" aria-selected="false"><span>🧭 週期全景矩陣</span></button>\n'
+        f'<button type="button" class="view-tab active" data-view="timeline" role="tab" aria-selected="true"><span>時間軸清單</span></button>\n'
+        f'<button type="button" class="view-tab" data-view="matrix" role="tab" aria-selected="false"><span>週期全景矩陣</span></button>\n'
         f'</div>\n'
         f'<main id="main" class="index-main">\n'
         f'<div id="report-list">{"".join(date_sections)}</div>\n'
@@ -556,8 +557,7 @@ def update_report_html(
         f'<meta name="twitter:card" content="summary">\n'
         f'<meta name="twitter:title" content="{esc(code)}｜{esc(company)} — EOIC 報告">\n'
         f'<meta name="twitter:description" content="{esc(verdict)}">\n'
-        f'<link rel="alternate" type="application/rss+xml" title="EOIC automatic RSS Feed" href="../feed.xml">\n'
-        f'<link rel="stylesheet" href="../assets/site.css">'
+        f'<link rel="alternate" type="application/rss+xml" title="EOIC automatic RSS Feed" href="../feed.xml">'
     )
 
     # Clean existing og/twitter/rss/site.css if present
@@ -568,6 +568,12 @@ def update_report_html(
 
     # Insert after <title>
     rep_html = re.sub(r'(<title>.*?</title>)', r'\1\n' + og_meta, rep_html, count=1)
+
+    # Load the shared theme after legacy embedded styles. Keep report content intact.
+    rep_html = re.sub(
+        r"</head>", '<link rel="stylesheet" href="../assets/site.css">\\n</head>',
+        rep_html, count=1, flags=re.I,
+    )
 
     # 2. Update sidebar
     rep_html = re.sub(r'<aside id="site-sidebar" class="site-sidebar">.*?</aside>', lambda _: new_sidebar, rep_html, count=1, flags=re.S)
