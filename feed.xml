@@ -7,6 +7,13 @@
     <description>EOIC 企業營運與創新週期分析報告更新訂閱</description>
     <language>zh-Hant</language>
     <item>
+      <title>AMT｜American Tower EOIC 報告</title>
+      <link>https://joyce5438.github.io/eoic-automatic/reports/AMT.html</link>
+      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/AMT.html</guid>
+      <pubDate>Sat, 24 Oct 2026 00:00:00 +0000</pubDate>
+      <description>【American Tower (AMT)】主要判斷：鐵塔需求穩定、退租壓低成長；CoreSite 已變現，全體尚未加速。關鍵結論：整體低速擴張、退租壓低增速；CoreSite 互連業務已變現，新容量出租與現金回收仍待驗證</description>
+    </item>
+    <item>
       <title>TREX｜Trex EOIC 報告</title>
       <link>https://joyce5438.github.io/eoic-automatic/reports/TREX.html</link>
       <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/TREX.html</guid>
@@ -243,13 +250,6 @@
       <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/TOST.html</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
       <description>【Toast (TOST)】主要判斷：既有平台規模變現，AI 代理仍在初步變現。關鍵結論：垂直平台持續變現；AI 代理有付費訊號，現金與硬體成本形成反證</description>
-    </item>
-    <item>
-      <title>SYM｜Symbotic EOIC 報告</title>
-      <link>https://joyce5438.github.io/eoic-automatic/reports/SYM.html</link>
-      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/SYM.html</guid>
-      <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
-      <description>【Symbotic (SYM)】主要判斷：部署、服務與利益已連接；新平台及獨立現金回收仍待驗證。關鍵結論：部署與正常營業利益改善，現金依交付與收款時點而波動</description>
     </item>
   </channel>
 </rss>
