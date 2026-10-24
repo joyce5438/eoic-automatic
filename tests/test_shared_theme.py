@@ -9,6 +9,14 @@ import sync_site
 
 
 class SharedThemeTests(unittest.TestCase):
+    def test_index_masthead_uses_live_archive_metadata(self):
+        page = sync_site.build_index_html([], [], {}, {})
+        self.assertIn('<span class="masthead-name">EOIC</span>', page)
+        self.assertIn('研究報告庫 · 0 份報告', page)
+        self.assertIn('最新更新 —', page)
+        self.assertIn('id="search"', page)
+        self.assertIn('data-view="matrix"', page)
+
     def test_uploaded_reports_keep_content_and_shared_theme_wins(self):
         root = sync_site.SITE_DIR
         cache = sync_site.load_existing_index_cache(root / 'index.html')
