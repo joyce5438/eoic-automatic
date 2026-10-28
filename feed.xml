@@ -7,6 +7,20 @@
     <description>EOIC 企業營運與創新週期分析報告更新訂閱</description>
     <language>zh-Hant</language>
     <item>
+      <title>HOOD｜Robinhood EOIC 報告</title>
+      <link>https://joyce5438.github.io/eoic-automatic/reports/HOOD.html</link>
+      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/HOOD.html</guid>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 +0000</pubDate>
+      <description>【Robinhood (HOOD)】主要判斷：擴張但分化：交易和收入創高，入金速度放慢。關鍵結論：整體擴張但入金放慢；預測市場已變現，產品利潤與現金回收仍待驗證</description>
+    </item>
+    <item>
+      <title>AMKR｜Amkor EOIC 報告</title>
+      <link>https://joyce5438.github.io/eoic-automatic/reports/AMKR.html</link>
+      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/AMKR.html</guid>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 +0000</pubDate>
+      <description>【Amkor (AMKR)】主要判斷：營運修復轉向擴張，先進封裝已變現但現金回收滯後。關鍵結論：運算先進封裝擴張並改善毛利；通訊疲弱，擴產現金回收仍待確認</description>
+    </item>
+    <item>
       <title>AMT｜American Tower EOIC 報告</title>
       <link>https://joyce5438.github.io/eoic-automatic/reports/AMT.html</link>
       <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/AMT.html</guid>
@@ -236,20 +250,6 @@
       <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/V.html</guid>
       <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
       <description>【Visa (V)】主要判斷：採用與變現成立，利益槓桿受到再投入及一次性費用壓抑。關鍵結論：支付網路持續擴張，增值服務加速；費用與現金轉換尚未同步</description>
-    </item>
-    <item>
-      <title>TT｜Trane Technologies EOIC 報告</title>
-      <link>https://joyce5438.github.io/eoic-automatic/reports/TT.html</link>
-      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/TT.html</guid>
-      <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
-      <description>【Trane Technologies (TT)】主要判斷：採用與變現加速，利潤率與現金來源有分歧。關鍵結論：商用系統與服務採用擴張，訂單交付及價格成本仍須驗證</description>
-    </item>
-    <item>
-      <title>TOST｜Toast EOIC 報告</title>
-      <link>https://joyce5438.github.io/eoic-automatic/reports/TOST.html</link>
-      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/TOST.html</guid>
-      <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
-      <description>【Toast (TOST)】主要判斷：既有平台規模變現，AI 代理仍在初步變現。關鍵結論：垂直平台持續變現；AI 代理有付費訊號，現金與硬體成本形成反證</description>
     </item>
   </channel>
 </rss>
