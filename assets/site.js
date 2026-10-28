@@ -25,7 +25,7 @@
   const cards = [...document.querySelectorAll('.report-card')];
   if (cards.length) {
     const input = document.querySelector('#search'), activeBox = document.querySelector('#active-tags'), count = document.querySelector('#result-count'), empty = document.querySelector('#empty'), clear = document.querySelector('#clear-all');
-    const indexByCode = new Map((window.EOIC_INDEX || []).map(item => [item.code, item])); let tags = new Set(), date = '', timer;
+    const indexByFile = new Map((window.EOIC_INDEX || []).map(item => [item.url, item])); let tags = new Set(), date = '', timer;
     const allTagButtons = () => [...document.querySelectorAll('[data-tag]')];
     const viewSwitch = document.querySelector('.view-switch');
     const reportList = document.querySelector('#report-list');
@@ -62,20 +62,20 @@
       const terms = normalizeTerms(input.value), selectedByGroup = {}; let shown = 0, fullHits = 0;
       tags.forEach(t => { const button = allTagButtons().find(b => b.dataset.tag === t); if (button) (selectedByGroup[button.dataset.group] ||= []).push(t); });
       cards.forEach(card => {
-        const item = indexByCode.get(card.dataset.code), cardMatch = includesAll(card.dataset.search, terms), matchingSections = terms.length && item ? item.sections.filter(section => includesAll(section.title + ' ' + section.text, terms)) : [];
+        const item = indexByFile.get(`reports/${card.dataset.reportFile}`), cardMatch = includesAll(card.dataset.search, terms), matchingSections = terms.length && item ? item.sections.filter(section => includesAll(section.title + ' ' + section.text, terms)) : [];
         const textOK = !terms.length || cardMatch || matchingSections.length > 0, cardGroups = JSON.parse(card.dataset.tagGroups);
         const tagOK = Object.entries(selectedByGroup).every(([group, selected]) => selected.some(t => (cardGroups[group] || []).includes(t)));
         const ok = textOK && (!date || card.dataset.date === date) && tagOK; card.hidden = !ok; if (ok) shown++;
         const hitBox = card.querySelector('.search-hits'); hitBox.hidden = !ok || !matchingSections.length || cardMatch;
-        if (!hitBox.hidden) { fullHits += matchingSections.length; hitBox.innerHTML = '<strong>命中段落</strong>' + matchingSections.slice(0, 2).map(section => `<a href="reports/${encodeURIComponent(card.dataset.code)}.html?q=${encodeURIComponent(input.value.trim())}#${encodeURIComponent(section.id)}"><b>${escapeHTML(section.title)}</b><span>${makeSnippet(section.text, terms)}</span></a>`).join(''); } else hitBox.textContent = '';
+        if (!hitBox.hidden) { fullHits += matchingSections.length; hitBox.innerHTML = '<strong>命中段落</strong>' + matchingSections.slice(0, 2).map(section => `<a href="reports/${encodeURIComponent(card.dataset.reportFile)}?q=${encodeURIComponent(input.value.trim())}#${encodeURIComponent(section.id)}"><b>${escapeHTML(section.title)}</b><span>${makeSnippet(section.text, terms)}</span></a>`).join(''); } else hitBox.textContent = '';
       });
 
       // Synchronize matrix pills
       const matrixPills = [...document.querySelectorAll('.matrix-pill')];
       if (matrixPills.length) {
         matrixPills.forEach(pill => {
-          const code = pill.dataset.code;
-          const card = cards.find(c => c.dataset.code === code);
+          const file = pill.dataset.reportFile;
+          const card = cards.find(c => c.dataset.reportFile === file);
           const isVisible = card ? !card.hidden : true;
           pill.classList.toggle('is-dimmed', !isVisible);
         });
@@ -88,7 +88,7 @@
       }
 
       document.querySelectorAll('.date-group').forEach(g => { const state = dateGroupState([...g.querySelectorAll('.report-card')].map(card => card.hidden)); g.hidden = state.hidden; const groupCount = g.querySelector('header span'); if (groupCount) groupCount.textContent = `${state.visible} 份`; });
-      document.querySelectorAll('.side-report-link').forEach(link => { link.hidden = cards.find(card => card.dataset.code === link.dataset.reportCode)?.hidden ?? false; });
+      document.querySelectorAll('.side-report-link').forEach(link => { link.hidden = cards.find(card => card.dataset.reportFile === link.dataset.reportFile)?.hidden ?? false; });
       document.querySelectorAll('.side-report-group').forEach(group => { group.hidden = !group.querySelector('.side-report-link:not([hidden])'); });
       allTagButtons().forEach(b => b.classList.toggle('active', tags.has(b.dataset.tag))); activeBox.innerHTML = [...tags].map(t => `<button class="tag active" data-remove="${escapeHTML(t)}">${escapeHTML(t)} ×</button>`).join('');
       count.textContent = terms.length ? `找到 ${shown} 份（全文命中 ${fullHits} 處）` : `找到 ${shown} 份`; empty.hidden = shown !== 0; clear.hidden = !terms.length && !date && !tags.size; writeHash();

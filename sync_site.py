@@ -57,7 +57,8 @@ def load_existing_index_cache(index_path: Path) -> dict[str, dict[str, str]]:
         per_m = re.search(r'<footer class="card-footer"><span>([^<]*)</span>', card)
         if code_m:
             code = code_m.group(1)
-            cache[code] = {
+            file_m = re.search(r'href="reports/([^"/]+\.html)"', card)
+            cache[h.unescape(file_m.group(1)) if file_m else code + ".html"] = {
                 "company": h.unescape(comp_m.group(1)) if comp_m else "",
                 "period": h.unescape(per_m.group(1)) if per_m else "",
             }
@@ -143,7 +144,7 @@ def parse_report(report_path: Path, cache: dict[str, dict[str, str]]) -> dict:
     prose_html = prose_m.group(1) if prose_m else ""
     prose_plain = strip_tags(prose_html)
 
-    cached_info = cache.get(code, {})
+    cached_info = cache.get(report_path.name, {})
     company = infer_company_name(code, h1_text, prose_plain, cached_info.get("company", ""))
     period = infer_period(code, rep_html, prose_plain, cached_info.get("period", ""))
 
@@ -169,6 +170,7 @@ def parse_report(report_path: Path, cache: dict[str, dict[str, str]]) -> dict:
 
     return {
         "path": report_path,
+        "filename": report_path.name,
         "code": code,
         "company": company,
         "h1": h1_text,
@@ -189,7 +191,7 @@ def build_sidebar(
     by_date: dict[str, list[dict]],
     tag_counts: dict[tuple[str, str], int],
     is_report_page: bool = False,
-    current_code: str | None = None,
+    current_filename: str | None = None,
 ) -> str:
     total = len(reports)
     latest_date = dates_ordered[0] if dates_ordered else ""
@@ -240,9 +242,9 @@ def build_sidebar(
     for d in dates_ordered:
         links = []
         for r in by_date[d]:
-            cur_attr = ' aria-current="page"' if current_code == r["code"] else ""
+            cur_attr = ' aria-current="page"' if current_filename == r["filename"] else ""
             links.append(
-                f'<a class="side-report-link" href="{report_prefix}{esc(r["code"])}.html" data-report-code="{esc(r["code"])}"{cur_attr}>'
+                f'<a class="side-report-link" href="{report_prefix}{esc(r["filename"])}" data-report-file="{esc(r["filename"])}"{cur_attr}>'
                 f'<strong>{esc(r["code"])}</strong><span>{esc(r["company"])}</span></a>'
             )
         side_groups.append(f'<section class="side-report-group" data-side-date="{esc(d)}"><h2>{esc(d)}</h2>{"".join(links)}</section>')
@@ -283,7 +285,7 @@ def build_card(r: dict) -> str:
         tag_btns.append(f'<span class="tag-more">+{extra_count}</span>')
 
     return (
-        f'<article class="report-card" data-code="{esc(r["code"])}" data-date="{esc(r["date"])}" '
+        f'<article class="report-card" data-code="{esc(r["code"])}" data-report-file="{esc(r["filename"])}" data-date="{esc(r["date"])}" '
         f'data-tag-groups="{esc(tag_groups_json)}" data-search="{esc(search_tokens)}">'
         f'<div class="card-top"><strong class="ticker">{esc(r["code"])}</strong><span>{esc(r["company"])}</span></div>'
         f'<h3>{esc(r["subtitle"])}</h3>'
@@ -291,7 +293,7 @@ def build_card(r: dict) -> str:
         f'<div class="tag-row">{"".join(tag_btns)}</div>'
         f'<div class="search-hits" hidden></div>'
         f'<footer class="card-footer"><span>{esc(r["period"])}</span>'
-        f'<nav><a class="primary" href="reports/{esc(r["code"])}.html">開啟</a>'
+        f'<nav><a class="primary" href="reports/{esc(r["filename"])}">開啟</a>'
         f'<a href="{esc(r["source_rel"])}" download>下載完整分析稿</a></nav></footer>'
         f'</article>'
     )
@@ -323,8 +325,8 @@ def build_matrix_html(reports: list[dict]) -> str:
                     " ".join(t[0].lower() for t in item["tags"]),
                 ])
                 pills.append(
-                    f'<a class="matrix-pill" href="reports/{esc(item["code"])}.html" '
-                    f'data-code="{esc(item["code"])}" data-date="{esc(item["date"])}" '
+                    f'<a class="matrix-pill" href="reports/{esc(item["filename"])}" '
+                    f'data-code="{esc(item["code"])}" data-report-file="{esc(item["filename"])}" data-date="{esc(item["date"])}" '
                     f'data-tag-groups="{esc(tag_groups_json)}" data-search="{esc(search_tokens)}" '
                     f'title="{esc(item["company"])}｜{esc(item["verdict"])}">'
                     f'<strong>{esc(item["code"])}</strong>'
@@ -368,7 +370,7 @@ def build_feed_xml(reports: list[dict]) -> str:
     items = []
     # Latest 35 reports
     for r in reports[:35]:
-        link = f"{BASE_URL}/reports/{esc(r['code'])}.html"
+        link = f"{BASE_URL}/reports/{esc(r['filename'])}"
         title = f"{esc(r['code'])}｜{esc(r['company'])} EOIC 報告"
         try:
             dt = datetime.strptime(r["date"], "%Y-%m-%d").replace(tzinfo=timezone.utc)
@@ -500,7 +502,7 @@ def build_related_html(r: dict, all_reports: list[dict]) -> str:
     for peer in selected_peers:
         peer_dir = peer["tag_groups"].get("營運方向", [""])[0] if peer["tag_groups"].get("營運方向") else ""
         cards.append(
-            f'<a class="related-card" href="{esc(peer["code"])}.html">'
+            f'<a class="related-card" href="{esc(peer["filename"])}">'
             f'<div class="related-card-top">'
             f'<strong>{esc(peer["code"])}</strong>'
             f'<span class="related-comp">{esc(peer["company"])}</span>'
@@ -552,7 +554,7 @@ def update_report_html(
         f'<meta property="og:type" content="article">\n'
         f'<meta property="og:title" content="{esc(code)}｜{esc(company)} — 企業營運與創新週期 (EOIC)">\n'
         f'<meta property="og:description" content="{esc(verdict)}：{esc(subtitle)}">\n'
-        f'<meta property="og:url" content="{BASE_URL}/reports/{esc(code)}.html">\n'
+        f'<meta property="og:url" content="{BASE_URL}/reports/{esc(r["filename"])}">\n'
         f'<meta property="og:site_name" content="EOIC automatic">\n'
         f'<meta name="twitter:card" content="summary">\n'
         f'<meta name="twitter:title" content="{esc(code)}｜{esc(company)} — EOIC 報告">\n'
@@ -593,8 +595,8 @@ def update_report_html(
         rep_html = re.sub(r'(<footer class="report-footer">)', lambda m: related_html + m.group(1), rep_html, count=1)
 
     # 5. Update footer
-    prev_link = f'<a href="{esc(prev_r["code"])}.html">← {esc(prev_r["code"])}</a>' if prev_r else "<span></span>"
-    next_link = f'<a href="{esc(next_r["code"])}.html">{esc(next_r["code"])} →</a>' if next_r else "<span></span>"
+    prev_link = f'<a href="{esc(prev_r["filename"])}">← {esc(prev_r["code"])}</a>' if prev_r else "<span></span>"
+    next_link = f'<a href="{esc(next_r["filename"])}">{esc(next_r["code"])} →</a>' if next_r else "<span></span>"
     new_footer = (
         f'<footer class="report-footer">'
         f'{prev_link}'
@@ -637,7 +639,7 @@ def main() -> None:
             "code": r["code"],
             "company": r["company"],
             "date": r["date"],
-            "url": f'reports/{r["code"]}.html',
+            "url": f'reports/{r["filename"]}',
             "sections": r["sections"],
         }
         for r in parsed
@@ -658,7 +660,7 @@ def main() -> None:
         rep_path = r["path"]
         rep_html = rep_path.read_text(encoding="utf-8")
 
-        new_sidebar = build_sidebar(parsed, dates_ordered, by_date, tag_counts, is_report_page=True, current_code=r["code"])
+        new_sidebar = build_sidebar(parsed, dates_ordered, by_date, tag_counts, is_report_page=True, current_filename=r["filename"])
         prev_r = parsed[i - 1] if i > 0 else None
         next_r = parsed[i + 1] if i + 1 < len(parsed) else None
 
