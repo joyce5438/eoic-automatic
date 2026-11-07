@@ -7,6 +7,55 @@
     <description>EOIC 企業營運與創新週期分析報告更新訂閱</description>
     <language>zh-Hant</language>
     <item>
+      <title>ZTS｜Zoetis EOIC 報告</title>
+      <link>https://joyce5438.github.io/eoic-automatic/reports/ZTS_EOIC_2026-11-07.html</link>
+      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/ZTS_EOIC_2026-11-07.html</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 +0000</pubDate>
+      <description>【Zoetis (ZTS)】主要判斷：週期判斷。關鍵結論：成熟減速</description>
+    </item>
+    <item>
+      <title>TEAM｜Atlassian EOIC 報告</title>
+      <link>https://joyce5438.github.io/eoic-automatic/reports/TEAM_EOIC_2026-11-07.html</link>
+      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/TEAM_EOIC_2026-11-07.html</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 +0000</pubDate>
+      <description>【Atlassian (TEAM)】主要判斷：週期判斷。關鍵結論：變現擴張，獲利修復</description>
+    </item>
+    <item>
+      <title>NET｜Cloudflare EOIC 報告</title>
+      <link>https://joyce5438.github.io/eoic-automatic/reports/NET_EOIC_2026-11-07.html</link>
+      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/NET_EOIC_2026-11-07.html</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 +0000</pubDate>
+      <description>【Cloudflare (NET)】主要判斷：週期判斷。關鍵結論：採用擴張，獲利遲滯</description>
+    </item>
+    <item>
+      <title>ELF｜e.l.f. Beauty EOIC 報告</title>
+      <link>https://joyce5438.github.io/eoic-automatic/reports/ELF_EOIC_2026-11-07.html</link>
+      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/ELF_EOIC_2026-11-07.html</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 +0000</pubDate>
+      <description>【e.l.f. Beauty (ELF)】主要判斷：週期判斷。關鍵結論：擴張，特殊項目干擾</description>
+    </item>
+    <item>
+      <title>EL｜Estée Lauder EOIC 報告</title>
+      <link>https://joyce5438.github.io/eoic-automatic/reports/EL_EOIC_2026-11-07.html</link>
+      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/EL_EOIC_2026-11-07.html</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 +0000</pubDate>
+      <description>【Estée Lauder (EL)】主要判斷：週期判斷。關鍵結論：修復</description>
+    </item>
+    <item>
+      <title>CVLT｜Commvault EOIC 報告</title>
+      <link>https://joyce5438.github.io/eoic-automatic/reports/CVLT_EOIC_2026-11-07.html</link>
+      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/CVLT_EOIC_2026-11-07.html</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 +0000</pubDate>
+      <description>【Commvault (CVLT)】主要判斷：週期判斷。關鍵結論：規模變現，增速放緩</description>
+    </item>
+    <item>
+      <title>AXON｜Axon Enterprise EOIC 報告</title>
+      <link>https://joyce5438.github.io/eoic-automatic/reports/AXON_EOIC_2026-11-07.html</link>
+      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/AXON_EOIC_2026-11-07.html</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 +0000</pubDate>
+      <description>【Axon Enterprise (AXON)】主要判斷：週期判斷。關鍵結論：擴張，現金遲滯</description>
+    </item>
+    <item>
       <title>U｜Unity EOIC 報告</title>
       <link>https://joyce5438.github.io/eoic-automatic/reports/U_EOIC_2026-11-05.html</link>
       <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/U_EOIC_2026-11-05.html</guid>
@@ -201,55 +250,6 @@
       <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/KMI.html</guid>
       <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
       <description>【Kinder Morgan (KMI)】主要判斷：我判斷 Kinder Morgan 處於「既有資產穩定擴張、新天然氣路徑加快簽約」階段。關鍵結論：天然氣長約與專案儲備擴張；既有資產已變現，新管線利益與現金回收跨至 2030 年後</description>
-    </item>
-    <item>
-      <title>IBM｜IBM EOIC 報告</title>
-      <link>https://joyce5438.github.io/eoic-automatic/reports/IBM.html</link>
-      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/IBM.html</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
-      <description>【IBM (IBM)】主要判斷：軟體修復成立，全面再加速仍待驗證。關鍵結論：軟體修復、速度回升；OpenShift採用持續，遞延交易補認與收購使獲利驗證仍有落差</description>
-    </item>
-    <item>
-      <title>RKLB｜Rocket Lab EOIC 報告</title>
-      <link>https://joyce5438.github.io/eoic-automatic/reports/RKLB.html</link>
-      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/RKLB.html</guid>
-      <pubDate>Sat, 17 Oct 2026 00:00:00 +0000</pubDate>
-      <description>【Rocket Lab (RKLB)】主要判斷：收入與毛利已形成，Neutron 不可提前判定成功。關鍵結論：太空系統規模變現，但現金仍消耗；Neutron 首飛已延至 2027</description>
-    </item>
-    <item>
-      <title>PAHC｜Phibro Animal Health EOIC 報告</title>
-      <link>https://joyce5438.github.io/eoic-automatic/reports/PAHC.html</link>
-      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/PAHC.html</guid>
-      <pubDate>Sat, 17 Oct 2026 00:00:00 +0000</pubDate>
-      <description>【Phibro Animal Health (PAHC)】主要判斷：整合已變現，全年FCF卻降至9.866。關鍵結論：整合與利潤修復成立；收購組合放緩，庫存令現金回收遲滯</description>
-    </item>
-    <item>
-      <title>OSCR｜Oscar Health EOIC 報告</title>
-      <link>https://joyce5438.github.io/eoic-automatic/reports/OSCR.html</link>
-      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/OSCR.html</guid>
-      <pubDate>Sat, 17 Oct 2026 00:00:00 +0000</pubDate>
-      <description>【Oscar Health (OSCR)】主要判斷：費率、規模與準備金共同改善；AI僅能判局部效率變現。關鍵結論：承保強力修復，AI效率尚難隔離；風險結算與法定資本限制現金解讀</description>
-    </item>
-    <item>
-      <title>NOC｜Northrop Grumman EOIC 報告</title>
-      <link>https://joyce5438.github.io/eoic-automatic/reports/NOC.html</link>
-      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/NOC.html</guid>
-      <pubDate>Sat, 17 Oct 2026 00:00:00 +0000</pubDate>
-      <description>【Northrop Grumman (NOC)】主要判斷：航空與任務系統確認成果；新飛彈與火箭發動機仍有成本反證。關鍵結論：訂單擴張與航空放量已成立；新飛彈及太空成本令利潤轉換不均</description>
-    </item>
-    <item>
-      <title>GME｜GameStop EOIC 報告</title>
-      <link>https://joyce5438.github.io/eoic-automatic/reports/GME.html</link>
-      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/GME.html</guid>
-      <pubDate>Sat, 17 Oct 2026 00:00:00 +0000</pubDate>
-      <description>【GameStop (GME)】主要判斷：收藏品絕對收入與毛利增加，尚非全公司需求再加速。關鍵結論：零售獲利修復，收藏品初步規模變現；現金節奏與獨立單位經濟仍未確認</description>
-    </item>
-    <item>
-      <title>PD｜PagerDuty EOIC 報告</title>
-      <link>https://joyce5438.github.io/eoic-automatic/reports/PD.html</link>
-      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/PD.html</guid>
-      <pubDate>Fri, 16 Oct 2026 00:00:00 +0000</pubDate>
-      <description>【PagerDuty (PD)】主要判斷：需求初步止跌；用量計價尚未確認全面修復。關鍵結論：需求初步止跌，用量變現待驗，效率先於成長</description>
     </item>
   </channel>
 </rss>
