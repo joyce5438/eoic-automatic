@@ -7,6 +7,13 @@
     <description>EOIC 企業營運與創新週期分析報告更新訂閱</description>
     <language>zh-Hant</language>
     <item>
+      <title>YOU｜Clear Secure EOIC 報告</title>
+      <link>https://joyce5438.github.io/eoic-automatic/reports/YOU_EOIC_2026-11-13.html</link>
+      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/YOU_EOIC_2026-11-13.html</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 +0000</pubDate>
+      <description>【Clear Secure (YOU)】主要判斷：規模變現期，方向向上，需求增速自 2026Q1 見頂回落。關鍵結論：訂單額增速自 2026Q1 見頂回落，eGates 規模部署且人力效率改善（單位經濟尚待隔離驗證），CLEAR1 只證明到採用與 bookings，認列收入尚未成立</description>
+    </item>
+    <item>
       <title>ZETA｜Zeta Global EOIC 報告</title>
       <link>https://joyce5438.github.io/eoic-automatic/reports/ZETA_EOIC_2026-11-11.html</link>
       <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/ZETA_EOIC_2026-11-11.html</guid>
@@ -243,13 +250,6 @@
       <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/TREX.html</guid>
       <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
       <description>【Trex (TREX)】主要判斷：收入修復加快，單位經濟與營業利益尚待確認。關鍵結論：收入修復加快，獲利尚未跟上；新品與欄杆已形成收入，新廠規模毛利待驗證，現金受建廠支出下降支持</description>
-    </item>
-    <item>
-      <title>KVUE｜Kenvue EOIC 報告</title>
-      <link>https://joyce5438.github.io/eoic-automatic/reports/KVUE.html</link>
-      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/KVUE.html</guid>
-      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
-      <description>【Kenvue (KVUE)】主要判斷：量剛確認轉正，護膚局部變現；整體單位經濟仍待修復。關鍵結論：總量剛轉正、整體低速修復；護膚品牌已有收入與分部利益成果，合併毛利承壓、EPS 改善含稅率貢獻</description>
     </item>
   </channel>
 </rss>
