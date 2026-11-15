@@ -7,6 +7,27 @@
     <description>EOIC 企業營運與創新週期分析報告更新訂閱</description>
     <language>zh-Hant</language>
     <item>
+      <title>VIRT｜VIRT EOIC 報告</title>
+      <link>https://joyce5438.github.io/eoic-automatic/reports/VIRT_EOIC_2026-11-15.html</link>
+      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/VIRT_EOIC_2026-11-15.html</guid>
+      <pubDate>Sun, 15 Nov 2026 00:00:00 +0000</pubDate>
+      <description>【VIRT (VIRT)】主要判斷：多資產做市已規模變現，新增資本的產出率回落。關鍵結論：多資產做市具韌性，日均收益與資本產出自高點回落</description>
+    </item>
+    <item>
+      <title>TTD｜TTD EOIC 報告</title>
+      <link>https://joyce5438.github.io/eoic-automatic/reports/TTD_EOIC_2026-11-15.html</link>
+      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/TTD_EOIC_2026-11-15.html</guid>
+      <pubDate>Sun, 15 Nov 2026 00:00:00 +0000</pubDate>
+      <description>【TTD (TTD)】主要判斷：產品修復已有證據，本業營收尚未回升。關鍵結論：產品採用修復，合併營收轉負，核心利潤尚未回升</description>
+    </item>
+    <item>
+      <title>MDA｜MDA Space EOIC 報告</title>
+      <link>https://joyce5438.github.io/eoic-automatic/reports/MDA_EOIC_2026-11-15.html</link>
+      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/MDA_EOIC_2026-11-15.html</guid>
+      <pubDate>Sun, 15 Nov 2026 00:00:00 +0000</pubDate>
+      <description>【MDA Space (MDA)】主要判斷：衛星已規模變現，最新季補單尚未追上認列。關鍵結論：衛星規模變現，補單低於交付，單季現金轉正</description>
+    </item>
+    <item>
       <title>ZETA｜Zeta Global EOIC 報告</title>
       <link>https://joyce5438.github.io/eoic-automatic/reports/ZETA_EOIC_2026-11-14.html</link>
       <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/ZETA_EOIC_2026-11-14.html</guid>
@@ -229,27 +250,6 @@
       <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/TREX.html</guid>
       <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
       <description>【Trex (TREX)】主要判斷：收入修復加快，單位經濟與營業利益尚待確認。關鍵結論：收入修復加快，獲利尚未跟上；新品與欄杆已形成收入，新廠規模毛利待驗證，現金受建廠支出下降支持</description>
-    </item>
-    <item>
-      <title>KVUE｜Kenvue EOIC 報告</title>
-      <link>https://joyce5438.github.io/eoic-automatic/reports/KVUE.html</link>
-      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/KVUE.html</guid>
-      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
-      <description>【Kenvue (KVUE)】主要判斷：量剛確認轉正，護膚局部變現；整體單位經濟仍待修復。關鍵結論：總量剛轉正、整體低速修復；護膚品牌已有收入與分部利益成果，合併毛利承壓、EPS 改善含稅率貢獻</description>
-    </item>
-    <item>
-      <title>TXN｜Texas Instruments EOIC 報告</title>
-      <link>https://joyce5438.github.io/eoic-automatic/reports/TXN.html</link>
-      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/TXN.html</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
-      <description>【Texas Instruments (TXN)】主要判斷：廣泛需求加速，獲利與現金同步改善。關鍵結論：需求加速、利潤與現金確認；資料中心已規模變現，產能效率與資本支出下降共同推動回收</description>
-    </item>
-    <item>
-      <title>TSLA｜Tesla EOIC 報告</title>
-      <link>https://joyce5438.github.io/eoic-automatic/reports/TSLA.html</link>
-      <guid isPermaLink="true">https://joyce5438.github.io/eoic-automatic/reports/TSLA.html</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
-      <description>【Tesla (TSLA)】主要判斷：我判斷 Tesla 整體仍處於「高投入、營業利益承壓，最新單季初步修復」；最清楚的創新成果是 FSD 付費採用持續擴散，尚未證明 Robotaxi 與 Optimus 已帶動合併利益加速。關鍵結論：營業利益仍受投入壓抑，最新單季初步修復；FSD 付費擴散，Robotaxi 規模獲利待證</description>
     </item>
   </channel>
 </rss>
